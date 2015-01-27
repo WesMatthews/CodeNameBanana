@@ -1,1 +1,4 @@
 C:\Users\Poncho\Documents\GitHub\CodeNameBanana\test\test\bin\Debug\test.exe.config
+C:\Users\David Laptop\Documents\GitHub\CodeNameBanana\test\test\bin\Debug\test.exe.config
+C:\Users\David Laptop\Documents\GitHub\CodeNameBanana\test\test\obj\Debug\test.exe
+C:\Users\David Laptop\Documents\GitHub\CodeNameBanana\test\test\obj\Debug\test.pdb
