@@ -44,8 +44,8 @@ Temporary Items
 
 
 # Other
-/CodeNameBanana/**/bin/
-/CodeNameBanana/**/obj/
+**/bin/
+**/obj/
 *.exe
 *.suo
 
