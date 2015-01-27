@@ -40,12 +40,12 @@ $RECYCLE.BIN/
 .AppleDesktop
 Network Trash Folder
 Temporary Items
-bin/
-obj/
 .apdisk
 
 
 # Other
+/CodeNameBanana/**/bin/
+/CodeNameBanana/**/obj/
 *.exe
 *.suo
 
