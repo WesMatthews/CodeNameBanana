@@ -40,8 +40,8 @@ $RECYCLE.BIN/
 .AppleDesktop
 Network Trash Folder
 Temporary Items
-test/test/bin/
-test/test/obj/
+bin/
+obj/
 .apdisk
 
 
