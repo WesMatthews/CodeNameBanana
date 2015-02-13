@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.30501.0
+VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PPSoft_SkedgeIT", "PPSoft_SkedgeIT\PPSoft_SkedgeIT.csproj", "{43BFB27A-D102-4335-9F0D-EA6CFFFBE7D9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PPSoft_SkedgeITViewModels", "PPSoft_SkedgeITViewModels\PPSoft_SkedgeITViewModels.csproj", "{BDDCC4D5-A534-4091-BE4A-5CAFFEB7CA52}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{43BFB27A-D102-4335-9F0D-EA6CFFFBE7D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{43BFB27A-D102-4335-9F0D-EA6CFFFBE7D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{43BFB27A-D102-4335-9F0D-EA6CFFFBE7D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BDDCC4D5-A534-4091-BE4A-5CAFFEB7CA52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDDCC4D5-A534-4091-BE4A-5CAFFEB7CA52}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDDCC4D5-A534-4091-BE4A-5CAFFEB7CA52}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDDCC4D5-A534-4091-BE4A-5CAFFEB7CA52}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
