@@ -5,7 +5,7 @@ VisualStudioVersion = 12.0.30501.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PPSoft_SkedgeIT", "PPSoft_SkedgeIT\PPSoft_SkedgeIT.csproj", "{43BFB27A-D102-4335-9F0D-EA6CFFFBE7D9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ppSoft_MySql", "ppSoft_MySql\ppSoft_MySql.csproj", "{75615D30-1905-4903-AB88-E5BF4574C9AE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PPSoft_DataModel", "PPSoft_DataModel\PPSoft_DataModel.csproj", "{FCF2D4E0-F13E-4502-857E-B2A35FB1AA1F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,16 +27,16 @@ Global
 		{43BFB27A-D102-4335-9F0D-EA6CFFFBE7D9}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{43BFB27A-D102-4335-9F0D-EA6CFFFBE7D9}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{43BFB27A-D102-4335-9F0D-EA6CFFFBE7D9}.Release|x86.ActiveCfg = Release|Any CPU
-		{75615D30-1905-4903-AB88-E5BF4574C9AE}.Debug|Any CPU.ActiveCfg = Debug|x86
-		{75615D30-1905-4903-AB88-E5BF4574C9AE}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
-		{75615D30-1905-4903-AB88-E5BF4574C9AE}.Debug|Mixed Platforms.Build.0 = Debug|x86
-		{75615D30-1905-4903-AB88-E5BF4574C9AE}.Debug|x86.ActiveCfg = Debug|x86
-		{75615D30-1905-4903-AB88-E5BF4574C9AE}.Debug|x86.Build.0 = Debug|x86
-		{75615D30-1905-4903-AB88-E5BF4574C9AE}.Release|Any CPU.ActiveCfg = Release|x86
-		{75615D30-1905-4903-AB88-E5BF4574C9AE}.Release|Mixed Platforms.ActiveCfg = Release|x86
-		{75615D30-1905-4903-AB88-E5BF4574C9AE}.Release|Mixed Platforms.Build.0 = Release|x86
-		{75615D30-1905-4903-AB88-E5BF4574C9AE}.Release|x86.ActiveCfg = Release|x86
-		{75615D30-1905-4903-AB88-E5BF4574C9AE}.Release|x86.Build.0 = Release|x86
+		{FCF2D4E0-F13E-4502-857E-B2A35FB1AA1F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCF2D4E0-F13E-4502-857E-B2A35FB1AA1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCF2D4E0-F13E-4502-857E-B2A35FB1AA1F}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{FCF2D4E0-F13E-4502-857E-B2A35FB1AA1F}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{FCF2D4E0-F13E-4502-857E-B2A35FB1AA1F}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{FCF2D4E0-F13E-4502-857E-B2A35FB1AA1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCF2D4E0-F13E-4502-857E-B2A35FB1AA1F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FCF2D4E0-F13E-4502-857E-B2A35FB1AA1F}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{FCF2D4E0-F13E-4502-857E-B2A35FB1AA1F}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{FCF2D4E0-F13E-4502-857E-B2A35FB1AA1F}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
