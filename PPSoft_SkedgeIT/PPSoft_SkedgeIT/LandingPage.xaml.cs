@@ -10,26 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace PPSoft_SkedgeIT
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for LandingPage.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class LandingPage : Window
     {
-        public MainWindow()
+        public LandingPage()
         {
             InitializeComponent();
-        }
-
-        private void buttonLogin_Click(object sender, RoutedEventArgs e)
-        {
-            LandingPage win2 = new LandingPage();
-            win2.Show();
-            this.Close();
         }
     }
 }
