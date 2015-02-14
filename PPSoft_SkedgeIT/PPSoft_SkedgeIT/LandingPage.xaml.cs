@@ -23,5 +23,31 @@ namespace PPSoft_SkedgeIT
         {
             InitializeComponent();
         }
+
+        public static bool hasNumber = false;
+        public static bool hasUpper = false;
+
+        /// <summary>
+        /// Checks string for password strength.
+        /// </summary>
+        /// <param name="password"></param>
+        /// <returns>Returns bool saying if the password is strong enough</returns>
+        public static bool pwCheck(string password)
+        {
+            int idx = 0;
+            if (password.Length >= 8)
+            {
+                while ((!hasNumber || !hasUpper) && idx < password.Length)
+                {
+                    if (Char.IsUpper(password[idx]))
+                        hasUpper = true;
+                    else if (Char.IsDigit(password[idx]))
+                        hasNumber = true;
+                    idx++;
+                }
+            }
+            return (hasNumber && hasUpper);
+        }
+
     }
 }
