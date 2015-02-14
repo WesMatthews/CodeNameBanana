@@ -41,7 +41,7 @@
                HorizontalAlignment="Right"
                Margin="0,20,0,0"/>
 
-        <TextBox Name="textPassword"
+        <PasswordBox Name="textPassword"
                  Grid.Row="2"
                  Grid.Column="1"
                  VerticalAlignment="Top"

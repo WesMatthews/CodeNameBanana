@@ -54,10 +54,11 @@
                 Grid.Column="3"
                 VerticalAlignment="Center"
                 HorizontalAlignment="Left"
-                Margin="10,0"
+                Margin="10,0" Click="buttonSchedulesByEmpID_Click"
                 Visibility="Hidden"/>
 
-                <DataGrid Grid.Row="1"
+                <DataGrid Name="shiftGrid"
+                    Grid.Row="1"
                   Grid.Column="1"
                   Grid.ColumnSpan="3"/>
             </Grid>

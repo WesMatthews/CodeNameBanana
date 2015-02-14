@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using PPSoft_SkedgeITViewModels;
 
 namespace PPSoft_SkedgeIT
 {
@@ -71,6 +72,15 @@ namespace PPSoft_SkedgeIT
         private void buttonSchedulesByDate_Click(object sender, RoutedEventArgs e)
         {
             //MAKES GUPTA HAPPEN
+        }
+
+        List<ShiftViewModel> shifts;
+        ShiftViewModel shiftObject = new ShiftViewModel();
+        private void buttonSchedulesByEmpID_Click(object sender, RoutedEventArgs e)
+        {
+            //bind data grid to list
+            shifts = shiftObject.getShifts(Convert.ToInt32(tbEmployeeID.Text));
+            shiftGrid.ItemsSource = shifts;
         }
 
     }

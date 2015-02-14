@@ -100,6 +100,12 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PPSoft_SkedgeITViewModels\PPSoft_SkedgeITViewModels.csproj">
+      <Project>{bddcc4d5-a534-4091-be4a-5caffeb7ca52}</Project>
+      <Name>PPSoft_SkedgeITViewModels</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
