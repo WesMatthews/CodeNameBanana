@@ -22,6 +22,7 @@ namespace PPSoft_SkedgeIT
         public LandingPage()
         {
             InitializeComponent();
+            radioByDate.IsChecked = true;
         }
 
         public static bool hasNumber = false;
@@ -47,6 +48,29 @@ namespace PPSoft_SkedgeIT
                 }
             }
             return (hasNumber && hasUpper);
+        }
+
+        private void radioByDate_Checked(object sender, RoutedEventArgs e)
+        {
+            tbEmployeeID.Visibility = System.Windows.Visibility.Hidden;
+            buttonSchedulesByEmpID.Visibility = System.Windows.Visibility.Hidden;
+            selectedDate.Visibility = System.Windows.Visibility.Visible;
+            buttonSchedulesByDate.Visibility = System.Windows.Visibility.Visible;
+            scheduleLabel.Content = "Schedule Date";
+        }
+
+        private void radioByEmpId_Checked(object sender, RoutedEventArgs e)
+        {
+            tbEmployeeID.Visibility = System.Windows.Visibility.Visible;
+            buttonSchedulesByEmpID.Visibility = System.Windows.Visibility.Visible;
+            selectedDate.Visibility = System.Windows.Visibility.Hidden;
+            buttonSchedulesByDate.Visibility = System.Windows.Visibility.Hidden;
+            scheduleLabel.Content = "Employee ID";
+        }
+
+        private void buttonSchedulesByDate_Click(object sender, RoutedEventArgs e)
+        {
+            //MAKES GUPTA HAPPEN
         }
 
     }

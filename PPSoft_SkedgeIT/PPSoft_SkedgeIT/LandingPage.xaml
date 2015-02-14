@@ -17,23 +17,45 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
 
-                <Label Content="Schedule Date"
-               Grid.Column="1"
-               VerticalAlignment="Center"
-               HorizontalAlignment="Right"/>
+                <StackPanel>
+                    <RadioButton x:Name="radioByDate" Content="Get Shifts By Date" Checked="radioByDate_Checked"/>
+                    <RadioButton x:Name="radioByEmpId" Content="Get Shifts By ID" Checked="radioByEmpId_Checked" />
+                </StackPanel>
+
+                <Label Name="scheduleLabel"
+                    Content="Schedule Date"
+                    Grid.Column="1"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Right"/>
 
                 <DatePicker Name="selectedDate"
                     HorizontalAlignment="Center" 
                     VerticalAlignment="Center"
                     Grid.Column="2"
-                    Margin="20,0"/>
-
+                    Margin="20,0"
+                            Visibility="Hidden"/>
+                <TextBox Name="tbEmployeeID"
+                         HorizontalAlignment="Center"
+                         VerticalAlignment="Center"
+                         Grid.Column="2"
+                         Width="100"
+                         Margin="20,0" Visibility="Hidden"
+                         />
                 <Button Name="buttonSchedulesByDate"
                 Content="Get Shift Data"
                 Grid.Column="3"
                 VerticalAlignment="Center"
                 HorizontalAlignment="Left"
-                Margin="10,0"/>
+                Margin="10,0" Click="buttonSchedulesByDate_Click"
+                        Visibility="Hidden"/>
+
+                <Button Name="buttonSchedulesByEmpID"
+                Content="Get Shift Data"
+                Grid.Column="3"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Left"
+                Margin="10,0"
+                Visibility="Hidden"/>
 
                 <DataGrid Grid.Row="1"
                   Grid.Column="1"
@@ -41,7 +63,7 @@
             </Grid>
         </TabItem>
         <TabItem Header="Management Tools">
-            
+
         </TabItem>
     </TabControl>
 </Window>
