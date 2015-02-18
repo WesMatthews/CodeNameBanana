@@ -4,15 +4,15 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="f3bfcb5f9c754969b2450bd565533839" Name="Diagram1" ZoomLevel="78">
+      <Diagram DiagramId="6922f5fcef694902a8cb1dc7e3d7cdc4" Name="Diagram1">
         <EntityTypeShape EntityType="ppsoftModel.access_level" Width="1.5" PointX="0.75" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ppsoftModel.department" Width="1.5" PointX="3" PointY="7.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ppsoftModel.employee" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ppsoftModel.shift" Width="1.5" PointX="5.25" PointY="2.375" IsExpanded="true" />
         <AssociationConnector Association="ppsoftModel.accessLevelId" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="ppsoftModel.shift" Width="1.5" PointX="5.25" PointY="4" />
-        <AssociationConnector Association="ppsoftModel.employeeID" />
-        <EntityTypeShape EntityType="ppsoftModel.department" Width="1.5" PointX="5.375" PointY="0.875" />
-        <AssociationConnector Association="ppsoftModel.departmentID" />
-        </Diagram>
+        <AssociationConnector Association="ppsoftModel.departmentID" ManuallyRouted="false" />
+        <AssociationConnector Association="ppsoftModel.employeeID" ManuallyRouted="false" />
+      </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
 </edmx:Edmx>

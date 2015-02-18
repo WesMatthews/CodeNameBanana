@@ -1,11 +1,18 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.30501.0
+VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PPSoft_SkedgeIT", "PPSoft_SkedgeIT\PPSoft_SkedgeIT.csproj", "{43BFB27A-D102-4335-9F0D-EA6CFFFBE7D9}"
+	ProjectSection(ProjectDependencies) = postProject
+		{4B14BC04-DC26-4670-B2A0-CF4DD4A6B405} = {4B14BC04-DC26-4670-B2A0-CF4DD4A6B405}
+		{BDDCC4D5-A534-4091-BE4A-5CAFFEB7CA52} = {BDDCC4D5-A534-4091-BE4A-5CAFFEB7CA52}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PPSoft_SkedgeITViewModels", "PPSoft_SkedgeITViewModels\PPSoft_SkedgeITViewModels.csproj", "{BDDCC4D5-A534-4091-BE4A-5CAFFEB7CA52}"
+	ProjectSection(ProjectDependencies) = postProject
+		{4B14BC04-DC26-4670-B2A0-CF4DD4A6B405} = {4B14BC04-DC26-4670-B2A0-CF4DD4A6B405}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PPSoft_SkedgeITModels", "PPSoft_SkedgeITModels\PPSoft_SkedgeITModels.csproj", "{4B14BC04-DC26-4670-B2A0-CF4DD4A6B405}"
 EndProject

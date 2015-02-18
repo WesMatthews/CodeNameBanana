@@ -28,6 +28,8 @@ namespace PPSoft_SkedgeIT
 
         public static bool hasNumber = false;
         public static bool hasUpper = false;
+        List<ShiftViewModel> shifts;
+        ShiftViewModel shiftObject = new ShiftViewModel();
 
         /// <summary>
         /// Checks string for password strength.
@@ -72,10 +74,11 @@ namespace PPSoft_SkedgeIT
         private void buttonSchedulesByDate_Click(object sender, RoutedEventArgs e)
         {
             //MAKES GUPTA HAPPEN
+            shifts = shiftObject.getShifts(selectedDate.DisplayDate.Date);
+            shiftGrid.ItemsSource = shifts;
         }
 
-        List<ShiftViewModel> shifts;
-        ShiftViewModel shiftObject = new ShiftViewModel();
+
         private void buttonSchedulesByEmpID_Click(object sender, RoutedEventArgs e)
         {
             //bind data grid to list

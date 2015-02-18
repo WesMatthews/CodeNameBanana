@@ -20,8 +20,25 @@ namespace PPSoft_SkedgeITModels
             List<ShiftModel> retShifts = new List<ShiftModel>();
             try
             {
+                 
                 // var SelectedShifts = dbContext.shifts.Where(s=>s.date == date); // need to update the DBmodel
+                DateTime searchDate = date.Date;
+                var Shifts = from s in dbContext.shifts
+                             join d in dbContext.departments on s.departmentID equals d.departmentID
+                           //  where ((s.date.Day == searchDate.Day) && (s.date.Month == searchDate.Month) && (s.date.Year == searchDate.Year))
+                             where ((s.startTime.Year == searchDate.Year) &&
+                                    (s.startTime.Month == searchDate.Month) &&
+                                    (s.startTime.Day == searchDate.Day))
+                             select new ShiftModel
+                             {
+                                 shiftID = s.shiftID,
+                                 employeeID = s.employeeID,
+                                 startTime = s.startTime,
+                                 endTime = s.endTime,
+                                 department = d.department1
 
+                             };
+                retShifts = Shifts.ToList<ShiftModel>();                    
             }
             catch (Exception e)
             {

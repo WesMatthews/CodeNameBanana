@@ -89,14 +89,12 @@
     <Compile Include="SkedgeITModelConfig.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.Config" />
+    <None Include="packages.config" />
     <EntityDeploy Include="SkedgeITDBModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>SkedgeITDBModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.Config" />
-    <None Include="packages.config" />
     <None Include="SkedgeITDBModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>SkedgeITDBModel.edmx</DependentUpon>
