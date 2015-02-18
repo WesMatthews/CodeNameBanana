@@ -16,12 +16,12 @@ namespace PPSoft_SkedgeITModels
     {
         public int shiftID { get; set; }
         public int employeeID { get; set; }
-        public int departmentID { get; set; }
         public System.DateTime date { get; set; }
-        public System.TimeSpan startTime { get; set; }
-        public System.TimeSpan endTime { get; set; }
+        public System.DateTime startTime { get; set; }
+        public System.DateTime endTime { get; set; }
+        public int departmentID { get; set; }
     
-        public virtual department department { get; set; }
         public virtual employee employee { get; set; }
+        public virtual department department { get; set; }
     }
 }

@@ -26,8 +26,8 @@ namespace PPSoft_SkedgeITModels
         }
     
         public DbSet<access_level> access_level { get; set; }
-        public DbSet<department> departments { get; set; }
         public DbSet<employee> employees { get; set; }
         public DbSet<shift> shifts { get; set; }
+        public DbSet<department> departments { get; set; }
     }
 }

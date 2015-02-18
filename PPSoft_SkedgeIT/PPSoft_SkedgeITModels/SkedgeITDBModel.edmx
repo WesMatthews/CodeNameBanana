@@ -50,8 +50,8 @@
           <Property Name="shiftID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="employeeID" Type="int" Nullable="false" />
           <Property Name="date" Type="date" Nullable="false" />
-          <Property Name="startTime" Type="time" Precision="0" Nullable="false" />
-          <Property Name="endTime" Type="time" Precision="0" Nullable="false" />
+          <Property Name="startTime" Type="datetime" Precision="0" Nullable="false" />
+          <Property Name="endTime" Type="datetime" Precision="0" Nullable="false" />
           <Property Name="departmentID" Type="int" Nullable="false" />
         </EntityType>
         <Association Name="accessLevelId">
@@ -120,14 +120,6 @@
           <Property Name="access" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="employees" Relationship="Self.accessLevelId" FromRole="access_level" ToRole="employee" />
         </EntityType>
-        <EntityType Name="department">
-          <Key>
-            <PropertyRef Name="departmentID" />
-          </Key>
-          <Property Name="departmentID" Type="Int32" Nullable="false" />
-          <Property Name="department1" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="shifts" Relationship="Self.departmentID" FromRole="department" ToRole="shift" />
-        </EntityType>
         <EntityType Name="employee">
           <Key>
             <PropertyRef Name="employeeID" />
@@ -152,20 +144,7 @@
           <Property Name="satStart" Type="DateTime" />
           <Property Name="satEnd" Type="DateTime" />
           <NavigationProperty Name="access_level" Relationship="Self.accessLevelId" FromRole="employee" ToRole="access_level" />
-          <NavigationProperty Name="shifts" Relationship="Self.employeeID" FromRole="employee" ToRole="shift" />
-        </EntityType>
-        <EntityType Name="shift">
-          <Key>
-            <PropertyRef Name="shiftID" />
-          </Key>
-          <Property Name="shiftID" Type="Int32" Nullable="false" />
-          <Property Name="employeeID" Type="Int32" Nullable="false" />
-          <Property Name="departmentID" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="department" Relationship="Self.departmentID" FromRole="shift" ToRole="department" />
-          <NavigationProperty Name="employee" Relationship="Self.employeeID" FromRole="shift" ToRole="employee" />
-          <Property Name="date" Type="DateTime" Nullable="false" />
-          <Property Name="startTime" Type="Time" Nullable="false" />
-          <Property Name="endTime" Type="Time" Nullable="false" />
+          <NavigationProperty Name="shifts" Relationship="ppsoftModel.employeeID" FromRole="employee" ToRole="shift" />
         </EntityType>
         <Association Name="accessLevelId">
           <End Role="access_level" Type="Self.access_level" Multiplicity="1" />
@@ -179,21 +158,40 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="departmentID">
-          <End Role="department" Type="Self.department" Multiplicity="1" />
-          <End Role="shift" Type="Self.shift" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="department">
-              <PropertyRef Name="departmentID" />
-            </Principal>
-            <Dependent Role="shift">
-              <PropertyRef Name="departmentID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
+        <EntityContainer Name="ppsoftEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="access_level" EntityType="Self.access_level" />
+          <EntitySet Name="employees" EntityType="Self.employee" />
+          <AssociationSet Name="accessLevelId" Association="Self.accessLevelId">
+            <End Role="access_level" EntitySet="access_level" />
+            <End Role="employee" EntitySet="employees" />
+          </AssociationSet>
+          <EntitySet Name="shifts" EntityType="ppsoftModel.shift" />
+          <AssociationSet Name="employeeID" Association="ppsoftModel.employeeID">
+            <End Role="employee" EntitySet="employees" />
+            <End Role="shift" EntitySet="shifts" />
+          </AssociationSet>
+          <EntitySet Name="departments" EntityType="ppsoftModel.department" />
+          <AssociationSet Name="departmentID" Association="ppsoftModel.departmentID">
+            <End Role="department" EntitySet="departments" />
+            <End Role="shift" EntitySet="shifts" />
+          </AssociationSet>
+          </EntityContainer>
+        <EntityType Name="shift">
+          <Key>
+            <PropertyRef Name="shiftID" />
+          </Key>
+          <Property Name="shiftID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="employeeID" Type="Int32" Nullable="false" />
+          <Property Name="date" Type="DateTime" Nullable="false" />
+          <Property Name="startTime" Type="DateTime" Nullable="false" />
+          <Property Name="endTime" Type="DateTime" Nullable="false" />
+          <Property Name="departmentID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="employee" Relationship="ppsoftModel.employeeID" FromRole="shift" ToRole="employee" />
+          <NavigationProperty Name="department" Relationship="ppsoftModel.departmentID" FromRole="shift" ToRole="department" />
+        </EntityType>
         <Association Name="employeeID">
-          <End Role="employee" Type="Self.employee" Multiplicity="1" />
-          <End Role="shift" Type="Self.shift" Multiplicity="*" />
+          <End Type="ppsoftModel.employee" Role="employee" Multiplicity="1" />
+          <End Type="ppsoftModel.shift" Role="shift" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="employee">
               <PropertyRef Name="employeeID" />
@@ -203,24 +201,26 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="ppsoftEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="access_level" EntityType="Self.access_level" />
-          <EntitySet Name="departments" EntityType="Self.department" />
-          <EntitySet Name="employees" EntityType="Self.employee" />
-          <EntitySet Name="shifts" EntityType="Self.shift" />
-          <AssociationSet Name="accessLevelId" Association="Self.accessLevelId">
-            <End Role="access_level" EntitySet="access_level" />
-            <End Role="employee" EntitySet="employees" />
-          </AssociationSet>
-          <AssociationSet Name="departmentID" Association="Self.departmentID">
-            <End Role="department" EntitySet="departments" />
-            <End Role="shift" EntitySet="shifts" />
-          </AssociationSet>
-          <AssociationSet Name="employeeID" Association="Self.employeeID">
-            <End Role="employee" EntitySet="employees" />
-            <End Role="shift" EntitySet="shifts" />
-          </AssociationSet>
-        </EntityContainer>
+        <EntityType Name="department">
+          <Key>
+            <PropertyRef Name="departmentID" />
+          </Key>
+          <Property Name="departmentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="department1" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="shifts" Relationship="ppsoftModel.departmentID" FromRole="department" ToRole="shift" />
+        </EntityType>
+        <Association Name="departmentID">
+          <End Type="ppsoftModel.department" Role="department" Multiplicity="1" />
+          <End Type="ppsoftModel.shift" Role="shift" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="department">
+              <PropertyRef Name="departmentID" />
+            </Principal>
+            <Dependent Role="shift">
+              <PropertyRef Name="departmentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -232,14 +232,6 @@
               <MappingFragment StoreEntitySet="access_level">
                 <ScalarProperty Name="access_levelID" ColumnName="access_levelID" />
                 <ScalarProperty Name="access" ColumnName="access" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="departments">
-            <EntityTypeMapping TypeName="ppsoftModel.department">
-              <MappingFragment StoreEntitySet="department">
-                <ScalarProperty Name="departmentID" ColumnName="departmentID" />
-                <ScalarProperty Name="department1" ColumnName="department" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -271,11 +263,19 @@
           <EntitySetMapping Name="shifts">
             <EntityTypeMapping TypeName="ppsoftModel.shift">
               <MappingFragment StoreEntitySet="shift">
+                <ScalarProperty Name="departmentID" ColumnName="departmentID" />
                 <ScalarProperty Name="endTime" ColumnName="endTime" />
                 <ScalarProperty Name="startTime" ColumnName="startTime" />
                 <ScalarProperty Name="date" ColumnName="date" />
-                <ScalarProperty Name="shiftID" ColumnName="shiftID" />
                 <ScalarProperty Name="employeeID" ColumnName="employeeID" />
+                <ScalarProperty Name="shiftID" ColumnName="shiftID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="departments">
+            <EntityTypeMapping TypeName="ppsoftModel.department">
+              <MappingFragment StoreEntitySet="department">
+                <ScalarProperty Name="department1" ColumnName="department" />
                 <ScalarProperty Name="departmentID" ColumnName="departmentID" />
               </MappingFragment>
             </EntityTypeMapping>
