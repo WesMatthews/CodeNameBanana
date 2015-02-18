@@ -17,19 +17,19 @@ namespace PPSoft_SkedgeITViewModels
 
         public List<ShiftViewModel> getShifts(int empID)
         {
-            
+
             List<ShiftViewModel> retShifts = new List<ShiftViewModel>();
             try
             {
                 ShiftModel shifts = new ShiftModel();
-                List<shift> shiftData = shifts.getShifts(empID);
-                foreach(shift s in shiftData)
+                List<ShiftModel> shiftData = shifts.getShifts(empID);
+                foreach (ShiftModel s in shiftData)
                 {
                     ShiftViewModel svm = new ShiftViewModel();
                     svm.shiftID = s.shiftID;
                     svm.employeeID = s.employeeID;
-                    svm.start = Convert.ToDateTime(s.startTime);
-                    svm.end = Convert.ToDateTime(s.endTime);
+                    svm.start = s.startTime;
+                    svm.end = s.endTime;
                     svm.Department = s.department.ToString();
                     retShifts.Add(svm);
                 }
@@ -41,4 +41,5 @@ namespace PPSoft_SkedgeITViewModels
             return retShifts;
         }
     }
+
 }

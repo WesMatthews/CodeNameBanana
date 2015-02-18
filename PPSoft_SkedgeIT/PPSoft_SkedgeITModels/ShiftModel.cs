@@ -8,6 +8,11 @@ namespace PPSoft_SkedgeITModels
 {
     public class ShiftModel : SkedgeITModelConfig
     {
+        public int shiftID { get; set; }
+        public int employeeID { get; set; }
+        public DateTime startTime { get; set; }
+        public DateTime endTime { get; set; }
+        public string department { get; set; }
 
         public List<ShiftModel> getShifts(DateTime date)
         {
@@ -15,8 +20,8 @@ namespace PPSoft_SkedgeITModels
             List<ShiftModel> retShifts = new List<ShiftModel>();
             try
             {
-               // var SelectedShifts = dbContext.shifts.Where(s=>s.date == date); // need to update the DBmodel
-                
+                // var SelectedShifts = dbContext.shifts.Where(s=>s.date == date); // need to update the DBmodel
+
             }
             catch (Exception e)
             {
@@ -25,13 +30,30 @@ namespace PPSoft_SkedgeITModels
             return retShifts;
         }
 
-        public List<shift> getShifts(int empID)
+        public List<ShiftModel> getShifts(int empID)
         {
-            ppsoftEntities dbContext = new ppsoftEntities();
-            List<shift> retShifts = new List<shift>();
+
+            List<ShiftModel> retShifts = new List<ShiftModel>();
             try
             {
-                retShifts = dbContext.shifts.Where(s => s.employeeID == empID).ToList();
+                ppsoftEntities dbContext = new ppsoftEntities();
+                // retShifts = dbContext.shifts.Where(s => s.employeeID == empID).ToList();
+                var Shifts = from s in dbContext.shifts
+                             join d in dbContext.departments on s.departmentID equals d.departmentID
+                             where (s.employeeID == empID)
+                             select new ShiftModel
+                             {
+                                 shiftID = s.shiftID,
+                                 employeeID = s.employeeID,
+                                 startTime = s.startTime,
+                                 endTime = s.endTime,
+                                 department = d.department1
+
+                             };
+
+
+                retShifts = Shifts.ToList<ShiftModel>();
+
             }
             catch (Exception e)
             {
@@ -40,4 +62,5 @@ namespace PPSoft_SkedgeITModels
             return retShifts;
         }
     }
+
 }
