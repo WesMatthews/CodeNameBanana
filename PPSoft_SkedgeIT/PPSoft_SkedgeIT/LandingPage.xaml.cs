@@ -74,7 +74,7 @@ namespace PPSoft_SkedgeIT
         private void buttonSchedulesByDate_Click(object sender, RoutedEventArgs e)
         {
             //MAKES GUPTA HAPPEN
-            shifts = shiftObject.getShifts(selectedDate.DisplayDate.Date);
+            shifts = shiftObject.getShifts((Convert.ToDateTime(selectedDate.Text).Date));
             shiftGrid.ItemsSource = shifts;
         }
 
