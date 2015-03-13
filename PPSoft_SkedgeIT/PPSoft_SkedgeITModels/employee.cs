@@ -24,20 +24,20 @@ namespace PPSoft_SkedgeITModels
         public string firstName { get; set; }
         public string lastName { get; set; }
         public int access_levelID { get; set; }
-        public Nullable<System.TimeSpan> sunStart { get; set; }
-        public Nullable<System.TimeSpan> sunEnd { get; set; }
-        public Nullable<System.TimeSpan> monStart { get; set; }
-        public Nullable<System.TimeSpan> monEnd { get; set; }
-        public Nullable<System.TimeSpan> tueStart { get; set; }
-        public Nullable<System.TimeSpan> tueEnd { get; set; }
-        public Nullable<System.TimeSpan> wedStart { get; set; }
-        public Nullable<System.TimeSpan> wedEnd { get; set; }
-        public Nullable<System.TimeSpan> thuStart { get; set; }
-        public Nullable<System.TimeSpan> thuEnd { get; set; }
-        public Nullable<System.TimeSpan> friStart { get; set; }
-        public Nullable<System.TimeSpan> friEnd { get; set; }
-        public Nullable<System.TimeSpan> satStart { get; set; }
-        public Nullable<System.TimeSpan> satEnd { get; set; }
+        public Nullable<System.DateTime> sunStart { get; set; }
+        public Nullable<System.DateTime> sunEnd { get; set; }
+        public Nullable<System.DateTime> monStart { get; set; }
+        public Nullable<System.DateTime> monEnd { get; set; }
+        public Nullable<System.DateTime> tueStart { get; set; }
+        public Nullable<System.DateTime> tueEnd { get; set; }
+        public Nullable<System.DateTime> wedStart { get; set; }
+        public Nullable<System.DateTime> wedEnd { get; set; }
+        public Nullable<System.DateTime> thuStart { get; set; }
+        public Nullable<System.DateTime> thuEnd { get; set; }
+        public Nullable<System.DateTime> friStart { get; set; }
+        public Nullable<System.DateTime> friEnd { get; set; }
+        public Nullable<System.DateTime> satStart { get; set; }
+        public Nullable<System.DateTime> satEnd { get; set; }
     
         public virtual access_level access_level { get; set; }
         public virtual ICollection<shift> shifts { get; set; }

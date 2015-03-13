@@ -28,20 +28,20 @@
           <Property Name="firstName" Type="varchar" MaxLength="45" Nullable="false" />
           <Property Name="lastName" Type="varchar" MaxLength="45" Nullable="false" />
           <Property Name="access_levelID" Type="int" Nullable="false" />
-          <Property Name="sunStart" Type="time" Precision="0" />
-          <Property Name="sunEnd" Type="time" Precision="0" />
-          <Property Name="monStart" Type="time" Precision="0" />
-          <Property Name="monEnd" Type="time" Precision="0" />
-          <Property Name="tueStart" Type="time" Precision="0" />
-          <Property Name="tueEnd" Type="time" Precision="0" />
-          <Property Name="wedStart" Type="time" Precision="0" />
-          <Property Name="wedEnd" Type="time" Precision="0" />
-          <Property Name="thuStart" Type="time" Precision="0" />
-          <Property Name="thuEnd" Type="time" Precision="0" />
-          <Property Name="friStart" Type="time" Precision="0" />
-          <Property Name="friEnd" Type="time" Precision="0" />
-          <Property Name="satStart" Type="time" Precision="0" />
-          <Property Name="satEnd" Type="time" Precision="0" />
+          <Property Name="sunStart" Type="datetime" Precision="0" />
+          <Property Name="sunEnd" Type="datetime" Precision="0" />
+          <Property Name="monStart" Type="datetime" Precision="0" />
+          <Property Name="monEnd" Type="datetime" Precision="0" />
+          <Property Name="tueStart" Type="datetime" Precision="0" />
+          <Property Name="tueEnd" Type="datetime" Precision="0" />
+          <Property Name="wedStart" Type="datetime" Precision="0" />
+          <Property Name="wedEnd" Type="datetime" Precision="0" />
+          <Property Name="thuStart" Type="datetime" Precision="0" />
+          <Property Name="thuEnd" Type="datetime" Precision="0" />
+          <Property Name="friStart" Type="datetime" Precision="0" />
+          <Property Name="friEnd" Type="datetime" Precision="0" />
+          <Property Name="satStart" Type="datetime" Precision="0" />
+          <Property Name="satEnd" Type="datetime" Precision="0" />
         </EntityType>
         <EntityType Name="shift">
           <Key>
@@ -138,20 +138,20 @@
           <Property Name="firstName" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="lastName" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="access_levelID" Type="Int32" Nullable="false" />
-          <Property Name="sunStart" Type="Time" />
-          <Property Name="sunEnd" Type="Time" />
-          <Property Name="monStart" Type="Time" />
-          <Property Name="monEnd" Type="Time" />
-          <Property Name="tueStart" Type="Time" />
-          <Property Name="tueEnd" Type="Time" />
-          <Property Name="wedStart" Type="Time" />
-          <Property Name="wedEnd" Type="Time" />
-          <Property Name="thuStart" Type="Time" />
-          <Property Name="thuEnd" Type="Time" />
-          <Property Name="friStart" Type="Time" />
-          <Property Name="friEnd" Type="Time" />
-          <Property Name="satStart" Type="Time" />
-          <Property Name="satEnd" Type="Time" />
+          <Property Name="sunStart" Type="DateTime" />
+          <Property Name="sunEnd" Type="DateTime" />
+          <Property Name="monStart" Type="DateTime" />
+          <Property Name="monEnd" Type="DateTime" />
+          <Property Name="tueStart" Type="DateTime" />
+          <Property Name="tueEnd" Type="DateTime" />
+          <Property Name="wedStart" Type="DateTime" />
+          <Property Name="wedEnd" Type="DateTime" />
+          <Property Name="thuStart" Type="DateTime" />
+          <Property Name="thuEnd" Type="DateTime" />
+          <Property Name="friStart" Type="DateTime" />
+          <Property Name="friEnd" Type="DateTime" />
+          <Property Name="satStart" Type="DateTime" />
+          <Property Name="satEnd" Type="DateTime" />
           <NavigationProperty Name="access_level" Relationship="Self.accessLevelId" FromRole="employee" ToRole="access_level" />
           <NavigationProperty Name="shifts" Relationship="Self.employeeID" FromRole="employee" ToRole="shift" />
         </EntityType>

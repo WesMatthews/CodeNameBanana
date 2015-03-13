@@ -8,7 +8,7 @@ using System.Data.Entity;
 
 namespace PPSoft_SkedgeITViewModels
 {
-    class EmployeeViewModel : SkedgeITViewModelConfig
+    public class EmployeeViewModel : SkedgeITViewModelConfig
     {
         public int EmployeeID { get; set; }
         public string password { get; set; }
@@ -79,23 +79,26 @@ namespace PPSoft_SkedgeITViewModels
             EmployeeViewModel retEmp = new EmployeeViewModel();
             ppsoftEntities dbContext = new ppsoftEntities();
             employee Profile = dbContext.employees.FirstOrDefault(e => e.employeeID == id);
-            firstName = Profile.firstName;
-            lastName = Profile.lastName;
-            accessLevel = Profile.access_level.ToString();
-            SunStart = Convert.ToDateTime(Profile.sunStart);
-            SunEnd   = Convert.ToDateTime(Profile.sunEnd);
-            MonStart = Convert.ToDateTime(Profile.monStart);
-            MonEnd   = Convert.ToDateTime(Profile.monEnd);
-            TueStart = Convert.ToDateTime(Profile.tueStart);
-            TueEnd   = Convert.ToDateTime(Profile.tueEnd);
-            WedStart = Convert.ToDateTime(Profile.wedStart);
-            WedEnd   = Convert.ToDateTime(Profile.wedEnd);
-            ThuStart = Convert.ToDateTime(Profile.thuStart);
-            ThuEnd   = Convert.ToDateTime(Profile.tueEnd);
-            FriStart = Convert.ToDateTime(Profile.friStart);
-            FriEnd   = Convert.ToDateTime(Profile.friEnd);
-            SatStart = Convert.ToDateTime(Profile.satStart);
-            SatEnd   = Convert.ToDateTime(Profile.satEnd);
+            if (Profile == null)
+                return null;
+            retEmp.firstName = Profile.firstName;
+            retEmp.lastName = Profile.lastName;
+            retEmp.accessLevel = Profile.access_level.ToString();
+            retEmp.password = Profile.password.ToString();
+            retEmp.SunStart = Convert.ToDateTime(Profile.sunStart);
+            retEmp.SunEnd = Convert.ToDateTime(Profile.sunEnd);
+            retEmp.MonStart = Convert.ToDateTime(Profile.monStart);
+            retEmp.MonEnd = Convert.ToDateTime(Profile.monEnd);
+            retEmp.TueStart = Convert.ToDateTime(Profile.tueStart);
+            retEmp.TueEnd = Convert.ToDateTime(Profile.tueEnd);
+            retEmp.WedStart = Convert.ToDateTime(Profile.wedStart);
+            retEmp.WedEnd = Convert.ToDateTime(Profile.wedEnd);
+            retEmp.ThuStart = Convert.ToDateTime(Profile.thuStart);
+            retEmp.ThuEnd = Convert.ToDateTime(Profile.tueEnd);
+            retEmp.FriStart = Convert.ToDateTime(Profile.friStart);
+            retEmp.FriEnd = Convert.ToDateTime(Profile.friEnd);
+            retEmp.SatStart = Convert.ToDateTime(Profile.satStart);
+            retEmp.SatEnd = Convert.ToDateTime(Profile.satEnd);
             return retEmp;
         }
 
