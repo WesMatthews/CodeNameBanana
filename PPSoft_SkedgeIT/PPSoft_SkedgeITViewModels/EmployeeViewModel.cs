@@ -102,5 +102,40 @@ namespace PPSoft_SkedgeITViewModels
             return retEmp;
         }
 
+        public void UpdateEmployee(int empId)
+        {
+            Dictionary<string, Object> dictionaryEmployee;
+            try
+            {
+                dictionaryEmployee = new Dictionary<string, Object>();
+                EmployeeModel empModel = new EmployeeModel();
+                dictionaryEmployee["password"] = txtUpdatePassword.Text;
+                dictionaryEmployee["firstName"] = txtUpdateFirstName.Text;
+                dictionaryEmployee["lastName"] = txtUpdateLastName.Text;
+                dictionaryEmployee["access_levelID"] = txtUpdateAccessLevel.Text;
+                dictionaryEmployee["sunStart"] = cmbUpdateSunStart.SelectedItem.Value.toString();
+                dictionaryEmployee["sunEnd"] = cmbUpdateSunEnd.SelectedItem.Value.toString();
+                dictionaryEmployee["monStart"] = cmbUpdateMonStart.SelectedItem.Value.toString();
+                dictionaryEmployee["monEnd"] = cmbUpdateMonEnd.SelectedItem.Value.toString();
+                dictionaryEmployee["tueStart"] = cmbUpdateTueStart.SelectedItem.Value.toString();
+                dictionaryEmployee["tueEnd"] = cmbUpdateTueEnd.SelectedItem.Value.toString();
+                dictionaryEmployee["wedStart"] = cmbUpdateWedStart.SelectedItem.Value.toString();
+                dictionaryEmployee["wedEnd"] = cmbUpdateWedEnd.SelectedItem.Value.toString();
+                dictionaryEmployee["thuStart"] = cmbUpdateThuStart.SelectedItem.Value.toString();
+                dictionaryEmployee["thuEnd"] = cmbUpdateThuEnd.SelectedItem.Value.toString();
+                dictionaryEmployee["friStart"] = cmbUpdateFriStart.SelectedItem.Value.toString();
+                dictionaryEmployee["friEnd"] = cmbUpdateFriEnd.SelectedItem.Value.toString();
+                dictionaryEmployee["satStart"] = cmbUpdateSatStart.SelectedItem.Value.toString();
+                dictionaryEmployee["satEnd"] = cmbUpdateSatEnd.SelectedItem.Value.toString();
+                empModel.UpdateEmployee(Serializer(dictionaryEmployee),empId);
+                Message = "Employee" + empId + " Updated Successfully";
+            }
+            catch (Exception ex)
+            {
+                Message = "Employee not updated, problem was " + ex.Message;
+                ErrorRoutine(ex, "EmployeeViewModel", "UpdateEmployee");
+            }
+        }
+
     }
 }
