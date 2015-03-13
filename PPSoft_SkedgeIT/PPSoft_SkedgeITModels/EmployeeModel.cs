@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PPSoft_SkedgeITModels
 {
-    public class EmployeeModel
+    public class EmployeeModel : SkedgeITModelConfig
     {
          //method name: Register
         //accepts: byte array of Employee information
@@ -15,7 +15,41 @@ namespace PPSoft_SkedgeITModels
         //adds the Employee row to the database
         public int Register(byte[] bytEmployee)
         {
-            return -1; //needs to be completed;
+            int empId = -1; //needs to be completed;
+            employee emp = new employee();
+            ppsoftEntities dbContext = new ppsoftEntities();
+            try
+            {
+                Dictionary<string, Object> dictionaryEmployee = (Dictionary<string, Object>)Deserializer(bytEmployee);
+                dbContext = new ppsoftEntities();
+                emp.password = Convert.ToString(dictionaryEmployee["password"]);
+                emp.firstName = Convert.ToString(dictionaryEmployee["firstName"]);
+                emp.lastName = Convert.ToString(dictionaryEmployee["lastName"]);
+                emp.access_levelID = Convert.ToInt32(dictionaryEmployee["access_levelID"]);
+                emp.sunStart = Convert.ToDateTime(dictionaryEmployee["sunStart"]);
+                emp.sunEnd = Convert.ToDateTime(dictionaryEmployee["sunEnd"]);
+                emp.sunStart = Convert.ToDateTime(dictionaryEmployee["monStart"]);
+                emp.monEnd = Convert.ToDateTime(dictionaryEmployee["monEnd"]);
+                emp.monStart = Convert.ToDateTime(dictionaryEmployee["tueStart"]);
+                emp.tueEnd = Convert.ToDateTime(dictionaryEmployee["tueEnd"]);
+                emp.tueStart = Convert.ToDateTime(dictionaryEmployee["wedStart"]);
+                emp.wedEnd = Convert.ToDateTime(dictionaryEmployee["wedEnd"]);
+                emp.thuStart = Convert.ToDateTime(dictionaryEmployee["thuStart"]);
+                emp.thuEnd = Convert.ToDateTime(dictionaryEmployee["thuEnd"]);
+                emp.friStart = Convert.ToDateTime(dictionaryEmployee["friStart"]);
+                emp.friEnd = Convert.ToDateTime(dictionaryEmployee["friEnd"]);
+                emp.satStart = Convert.ToDateTime(dictionaryEmployee["satStart"]);
+                emp.satEnd = Convert.ToDateTime(dictionaryEmployee["satEnd"]);
+                dbContext.employees.Add(emp);
+                dbContext.SaveChanges();
+                empId = emp.employeeID;
+            }
+            catch (Exception ex)
+            {
+                ErrorRoutine(ex, "EmployeeModel", "Register");
+            }
+
+            return empId;  
         }
     }
 }
