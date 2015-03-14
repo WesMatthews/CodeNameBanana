@@ -110,5 +110,40 @@ namespace PPSoft_SkedgeITViewModels
             return retEmp;
         }
 
+        public void UpdateEmployee(int empId)
+        {
+            Dictionary<string, Object> dictionaryEmployee;
+            try
+            {
+                dictionaryEmployee = new Dictionary<string, Object>();
+                EmployeeModel empModel = new EmployeeModel();
+                dictionaryEmployee["password"] = password;
+                dictionaryEmployee["firstName"] = firstName;
+                dictionaryEmployee["lastName"] = lastName;
+                dictionaryEmployee["access_levelID"] = accessLevel;
+                dictionaryEmployee["sunStart"] = SunStart;
+                dictionaryEmployee["sunEnd"] = SunEnd;
+                dictionaryEmployee["monStart"] = MonStart;
+                dictionaryEmployee["monEnd"] = MonEnd;
+                dictionaryEmployee["tueStart"] = TueStart;
+                dictionaryEmployee["tueEnd"] = TueEnd;
+                dictionaryEmployee["wedStart"] = WedStart;
+                dictionaryEmployee["wedEnd"] = WedEnd;
+                dictionaryEmployee["thuStart"] = ThuStart;
+                dictionaryEmployee["thuEnd"] = ThuEnd;
+                dictionaryEmployee["friStart"] = FriStart;
+                dictionaryEmployee["friEnd"] = FriEnd;
+                dictionaryEmployee["satStart"] = SatStart;
+                dictionaryEmployee["satEnd"] = SatEnd;
+                empModel.UpdateEmployee(Serializer(dictionaryEmployee),empId);
+                Message = "Employee" + empId + " Updated Successfully";
+            }
+            catch (Exception ex)
+            {
+                Message = "Employee not updated, problem was " + ex.Message;
+                ErrorRoutine(ex, "EmployeeViewModel", "UpdateEmployee");
+            }
+        }
+
     }
 }

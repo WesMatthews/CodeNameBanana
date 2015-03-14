@@ -97,6 +97,45 @@ namespace PPSoft_SkedgeIT
             cbSatEndHr.SelectedIndex = 0;
             cbSatEndMin.ItemsSource = minutes;
             cbSatEndMin.SelectedIndex = 0;
+
+
+
+            //
+            
+            cmbUpdateSunStartHr.ItemsSource = hours;
+            cmbUpdateSunStartMin.ItemsSource = minutes;
+            cmbUpdateSunEndHr.ItemsSource = hours;
+            cmbUpdateSunEndMin.ItemsSource = minutes;
+
+            cmbUpdateMonStartHr.ItemsSource = hours;
+            cmbUpdateMonStartMin.ItemsSource = minutes;
+            cmbUpdateMonEndHr.ItemsSource = hours;
+            cmbUpdateMonEndMin.ItemsSource = minutes;
+
+            cmbUpdateTueStartHr.ItemsSource = hours;
+            cmbUpdateTueStartMin.ItemsSource = minutes;
+            cmbUpdateTueEndHr.ItemsSource = hours;
+            cmbUpdateTueEndMin.ItemsSource = minutes;
+
+            cmbUpdateWedStartHr.ItemsSource = hours;
+            cmbUpdateWedStartMin.ItemsSource = minutes;
+            cmbUpdateWedEndHr.ItemsSource = hours;
+            cmbUpdateWedEndMin.ItemsSource = minutes;
+
+            cmbUpdateThuStartHr.ItemsSource = hours;
+            cmbUpdateThuStartMin.ItemsSource = minutes;
+            cmbUpdateThuEndHr.ItemsSource = hours;
+            cmbUpdateThuEndMin.ItemsSource = minutes;
+            
+            cmbUpdateFriStartHr.ItemsSource = hours;
+            cmbUpdateFriStartMin.ItemsSource = minutes;
+            cmbUpdateFriEndHr.ItemsSource = hours;
+            cmbUpdateFriEndMin.ItemsSource = minutes;
+
+            cmbUpdateSatStartHr.ItemsSource = hours;
+            cmbUpdateSatStartMin.ItemsSource = minutes;
+            cmbUpdateSatEndHr.ItemsSource = hours;
+            cmbUpdateSatEndMin.ItemsSource = minutes;
         }
 
         public static bool hasNumber = false;
@@ -209,5 +248,90 @@ namespace PPSoft_SkedgeIT
             MessageBox.Show(emp.Message);
         }
 
+        private void UpdateEmployee_Click(object sender, RoutedEventArgs e)
+        {
+            EmployeeViewModel emp = new EmployeeViewModel();
+            emp.firstName = txtUpdateFirstName.Text;
+            emp.lastName = txtUpdateLastName.Text;
+            emp.password = txtUpdatePassword.Password;
+            emp.accessLevel = txtUpdateAccessLevel.Text;
+            emp.SunStart = new DateTime(1, 1, 1, Convert.ToInt32(cmbUpdateSunStartHr.SelectedValue),
+                Convert.ToInt32(cmbUpdateSunStartMin.SelectedValue), 0);
+            emp.SunEnd = new DateTime(1, 1, 1, Convert.ToInt32(cmbUpdateSunEndHr.SelectedValue),
+                Convert.ToInt32(cmbUpdateSunEndMin.SelectedValue), 0);
+            emp.MonStart = new DateTime(1, 1, 1, Convert.ToInt32(cmbUpdateMonStartHr.SelectedValue),
+                Convert.ToInt32(cmbUpdateMonStartMin.SelectedValue), 0);
+            emp.MonEnd = new DateTime(1, 1, 1, Convert.ToInt32(cmbUpdateMonEndHr.SelectedValue),
+                Convert.ToInt32(cmbUpdateMonEndMin.SelectedValue), 0);
+            emp.TueStart = new DateTime(1, 1, 1, Convert.ToInt32(cmbUpdateTueStartHr.SelectedValue),
+                Convert.ToInt32(cmbUpdateTueStartMin.SelectedValue), 0);
+            emp.TueEnd = new DateTime(1, 1, 1, Convert.ToInt32(cmbUpdateTueEndHr.SelectedValue),
+                Convert.ToInt32(cmbUpdateTueEndMin.SelectedValue), 0);
+            emp.WedStart = new DateTime(1, 1, 1, Convert.ToInt32(cmbUpdateWedStartHr.SelectedValue),
+                Convert.ToInt32(cmbUpdateWedStartMin.SelectedValue), 0);
+            emp.WedEnd = new DateTime(1, 1, 1, Convert.ToInt32(cmbUpdateWedEndHr.SelectedValue),
+                Convert.ToInt32(cmbUpdateWedEndMin.SelectedValue), 0);
+            emp.ThuStart = new DateTime(1, 1, 1, Convert.ToInt32(cmbUpdateThuStartHr.SelectedValue),
+                Convert.ToInt32(cmbUpdateThuStartMin.SelectedValue), 0);
+            emp.ThuEnd = new DateTime(1, 1, 1, Convert.ToInt32(cmbUpdateThuEndHr.SelectedValue),
+                Convert.ToInt32(cmbUpdateThuEndMin.SelectedValue), 0);
+            emp.FriStart = new DateTime(1, 1, 1, Convert.ToInt32(cmbUpdateFriStartHr.SelectedValue),
+                Convert.ToInt32(cmbUpdateFriStartMin.SelectedValue), 0);
+            emp.FriEnd = new DateTime(1, 1, 1, Convert.ToInt32(cmbUpdateFriEndHr.SelectedValue),
+                Convert.ToInt32(cmbUpdateFriEndMin.SelectedValue), 0);
+            emp.SatStart = new DateTime(1, 1, 1, Convert.ToInt32(cmbUpdateSatStartHr.SelectedValue),
+                Convert.ToInt32(cmbUpdateSatStartMin.SelectedValue), 0);
+            emp.SatEnd = new DateTime(1, 1, 1, Convert.ToInt32(cmbUpdateSatEndHr.SelectedValue),
+                Convert.ToInt32(cmbUpdateSatEndMin.SelectedValue), 0);
+            emp.UpdateEmployee(Convert.ToInt32(txtEmpNum.Text));
+            MessageBox.Show(emp.Message);
+        }
+
+        private void GetEmployee_Click(object sender, RoutedEventArgs e)
+        {
+            EmployeeViewModel emp = new EmployeeViewModel();
+            EmployeeViewModel getEmp = new EmployeeViewModel();
+            try
+            {
+                emp = getEmp.getEmployeeProfile(Convert.ToInt32(txtEmpNum.Text));
+                txtUpdateAccessLevel.Text = emp.accessLevel.ToString();
+                txtUpdateFirstName.Text = emp.firstName;
+                txtUpdateLastName.Text = emp.lastName;
+                txtUpdatePassword.Password = emp.password;
+                cmbUpdateSunStartHr.SelectedValue = emp.SunStart.Hour;
+                cmbUpdateSunStartMin.SelectedValue = emp.SunStart.Minute;
+                cmbUpdateSunEndHr.SelectedValue = emp.SunEnd.Hour;
+                cmbUpdateSunEndMin.SelectedValue = emp.SunEnd.Minute;
+                cmbUpdateMonStartHr.SelectedValue = emp.MonStart.Hour;
+                cmbUpdateMonStartMin.SelectedValue = emp.MonStart.Minute;
+                cmbUpdateMonEndHr.SelectedValue = emp.MonEnd.Hour;
+                cmbUpdateMonEndMin.SelectedValue = emp.MonEnd.Minute;
+                cmbUpdateTueStartHr.SelectedValue = emp.TueStart.Hour;
+                cmbUpdateTueStartMin.SelectedValue = emp.TueStart.Minute;
+                cmbUpdateTueEndHr.SelectedValue = emp.TueEnd.Hour;
+                cmbUpdateTueEndMin.SelectedValue = emp.TueEnd.Minute;
+                cmbUpdateWedStartHr.SelectedValue = emp.WedStart.Hour;
+                cmbUpdateWedStartMin.SelectedValue = emp.WedStart.Minute;
+                cmbUpdateWedEndHr.SelectedValue = emp.WedEnd.Hour;
+                cmbUpdateWedEndMin.SelectedValue = emp.WedEnd.Minute;
+                cmbUpdateThuStartHr.SelectedValue = emp.ThuStart.Hour;
+                cmbUpdateThuStartMin.SelectedValue = emp.ThuStart.Minute;
+                cmbUpdateThuEndHr.SelectedValue = emp.ThuEnd.Hour;
+                cmbUpdateThuEndMin.SelectedValue = emp.ThuEnd.Minute;
+                cmbUpdateFriStartHr.SelectedValue = emp.FriStart.Hour;
+                cmbUpdateFriStartMin.SelectedValue = emp.FriStart.Minute;
+                cmbUpdateFriEndHr.SelectedValue = emp.FriEnd.Hour;
+                cmbUpdateFriEndMin.SelectedValue = emp.FriEnd.Minute;
+                cmbUpdateSatStartHr.SelectedValue = emp.SatStart.Hour;
+                cmbUpdateSatStartMin.SelectedValue = emp.SatStart.Minute;
+                cmbUpdateSatEndHr.SelectedValue = emp.SatEnd.Hour;
+                cmbUpdateSatEndMin.SelectedValue = emp.SatEnd.Minute;
+                
+            }
+            catch (Exception ex) 
+            {
+                MessageBox.Show(ex.ToString());            
+            }
+        }
     }
 }
