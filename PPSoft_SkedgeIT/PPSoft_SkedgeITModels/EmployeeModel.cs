@@ -67,6 +67,7 @@ namespace PPSoft_SkedgeITModels
                 Dictionary<string, Object> dictionaryEmployee = (Dictionary<string, Object>)Deserializer(bytEmployee);
                 dbContext = new ppsoftEntities();
                 emp = dbContext.employees.Where(e => e.employeeID == empId).FirstOrDefault();
+                dbContext.employees.Attach(emp);
 
                 emp.password = Convert.ToString(dictionaryEmployee["password"]);
                 emp.firstName = Convert.ToString(dictionaryEmployee["firstName"]);
@@ -86,11 +87,8 @@ namespace PPSoft_SkedgeITModels
                 emp.friEnd = Convert.ToDateTime(dictionaryEmployee["friEnd"]);
                 emp.satStart = Convert.ToDateTime(dictionaryEmployee["satStart"]);
                 emp.satEnd = Convert.ToDateTime(dictionaryEmployee["satEnd"]);
-
+               
                 dbContext.SaveChanges();
-                
-                
-
             }
             catch (Exception ex)
             {
