@@ -166,7 +166,7 @@ namespace PPSoft_SkedgeIT
             EmployeeViewModel emp = new EmployeeViewModel();
             emp.firstName = tbFirstName.Text;
             emp.lastName = tbLastName.Text;
-            emp.password = tbPassword.Text;
+            emp.password = tbPassword.Password;
             emp.accessLevel = tbAccessLevel.Text;
             emp.SunStart = new DateTime(1, 1, 1, Convert.ToInt32(cbSundayStartHr.SelectedValue),
                 Convert.ToInt32(cbSundayStartMin.SelectedValue), 1);
