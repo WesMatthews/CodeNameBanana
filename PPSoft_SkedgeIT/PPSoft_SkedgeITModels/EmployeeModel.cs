@@ -20,6 +20,7 @@ namespace PPSoft_SkedgeITModels
             ppsoftEntities dbContext = new ppsoftEntities();
             try
             {
+                
                 Dictionary<string, Object> dictionaryEmployee = (Dictionary<string, Object>)Deserializer(bytEmployee);
                 dbContext = new ppsoftEntities();
                 emp.password = Convert.ToString(dictionaryEmployee["password"]);

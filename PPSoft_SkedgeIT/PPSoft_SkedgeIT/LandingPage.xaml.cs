@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Windows.Documents;
+using System.Printing;
 using PPSoft_SkedgeITViewModels;
 
 namespace PPSoft_SkedgeIT
@@ -146,9 +148,16 @@ namespace PPSoft_SkedgeIT
 
         private void buttonSchedulesByDate_Click(object sender, RoutedEventArgs e)
         {
-            //MAKES GUPTA HAPPEN
-            shifts = shiftObject.getShifts((Convert.ToDateTime(selectedDate.Text).Date));
-            shiftGrid.ItemsSource = shifts;
+            if (!(selectedDate.Text).Equals(""))
+            {
+                shifts = shiftObject.getShifts((Convert.ToDateTime(selectedDate.Text).Date));
+                shiftGrid.ItemsSource = shifts;
+            }
+
+            else
+            {
+                MessageBox.Show("Select a Date", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
 
 
@@ -158,7 +167,7 @@ namespace PPSoft_SkedgeIT
             shifts = shiftObject.getShifts(Convert.ToInt32(tbEmployeeID.Text));
             shiftGrid.ItemsSource = shifts;
         }
-
+            
         private void removeShift_Click(object sender, RoutedEventArgs e)
         {
             if (shiftGrid.SelectedItem != null)
@@ -207,6 +216,13 @@ namespace PPSoft_SkedgeIT
                 Convert.ToInt32(cbSatEndMin.SelectedValue), 1);
             emp.Register();
             MessageBox.Show(emp.Message);
+        }
+
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            PrintDialog prtDiag = new PrintDialog();
+            prtDiag.ShowDialog();
+
         }
 
     }
