@@ -37,6 +37,10 @@ namespace PPSoft_SkedgeIT
             {
                 errorText.Text = "The password entered does not match.";
             }
+            else if(currEmp.accessLevel == "employee")
+            {
+                errorText.Text = "Insufficient access rights, unable to log in.";
+            }
             else
             {
                 LandingPage win2 = new LandingPage();

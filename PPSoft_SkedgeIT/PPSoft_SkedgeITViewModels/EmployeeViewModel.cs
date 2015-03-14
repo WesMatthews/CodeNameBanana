@@ -78,27 +78,35 @@ namespace PPSoft_SkedgeITViewModels
         {
             EmployeeViewModel retEmp = new EmployeeViewModel();
             ppsoftEntities dbContext = new ppsoftEntities();
-            employee Profile = dbContext.employees.FirstOrDefault(e => e.employeeID == id);
+            //employee Profile = dbContext.employees.FirstOrDefault(e => e.employeeID == id);
+            var Profile = from e in dbContext.employees
+                               join a in dbContext.access_level on e.access_levelID equals a.access_levelID
+                               where (e.employeeID == id)
+                               select new EmployeeViewModel
+                               {
+                                   EmployeeID = e.employeeID,
+                                   firstName = e.firstName,
+                                   lastName = e.lastName,
+                                   accessLevel = a.access,
+                                   password = e.password,
+                                   SunStart = (DateTime)e.sunStart,
+                                   SunEnd = (DateTime)e.sunEnd,
+                                   MonStart = (DateTime)e.monStart,
+                                   MonEnd = (DateTime)e.monEnd,
+                                   TueStart = (DateTime)e.tueStart,
+                                   TueEnd = (DateTime)e.tueEnd,
+                                   WedStart = (DateTime)e.wedStart,
+                                   WedEnd = (DateTime)e.wedEnd,
+                                   ThuStart = (DateTime)e.thuStart,
+                                   ThuEnd = (DateTime)e.thuEnd,
+                                   FriStart = (DateTime)e.friStart,
+                                   FriEnd = (DateTime)e.friEnd,
+                                   SatStart = (DateTime)e.satStart,
+                                   SatEnd = (DateTime)e.satEnd
+                               };
             if (Profile == null)
                 return null;
-            retEmp.firstName = Profile.firstName;
-            retEmp.lastName = Profile.lastName;
-            retEmp.accessLevel = Profile.access_level.ToString();
-            retEmp.password = Profile.password.ToString();
-            retEmp.SunStart = Convert.ToDateTime(Profile.sunStart);
-            retEmp.SunEnd = Convert.ToDateTime(Profile.sunEnd);
-            retEmp.MonStart = Convert.ToDateTime(Profile.monStart);
-            retEmp.MonEnd = Convert.ToDateTime(Profile.monEnd);
-            retEmp.TueStart = Convert.ToDateTime(Profile.tueStart);
-            retEmp.TueEnd = Convert.ToDateTime(Profile.tueEnd);
-            retEmp.WedStart = Convert.ToDateTime(Profile.wedStart);
-            retEmp.WedEnd = Convert.ToDateTime(Profile.wedEnd);
-            retEmp.ThuStart = Convert.ToDateTime(Profile.thuStart);
-            retEmp.ThuEnd = Convert.ToDateTime(Profile.tueEnd);
-            retEmp.FriStart = Convert.ToDateTime(Profile.friStart);
-            retEmp.FriEnd = Convert.ToDateTime(Profile.friEnd);
-            retEmp.SatStart = Convert.ToDateTime(Profile.satStart);
-            retEmp.SatEnd = Convert.ToDateTime(Profile.satEnd);
+            retEmp = Profile.ToList<EmployeeViewModel>()[0];
             return retEmp;
         }
 
