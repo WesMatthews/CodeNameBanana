@@ -5,7 +5,14 @@
         WindowStartupLocation="CenterScreen">
     <TabControl>
         <TabItem Header="Scheduling Data">
-            <Grid>
+            <DockPanel LastChildFill="True">
+                <Menu IsMainMenu="True" DockPanel.Dock="Top">
+                <MenuItem Header="File">
+                        <MenuItem Header="Print" Click="MenuItem_Click" />
+                    </MenuItem>
+                </Menu>
+
+                <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="6*"/>
@@ -69,6 +76,7 @@
                         Margin="10"
                         VerticalAlignment="Bottom" Click="removeShift_Click"/>
             </Grid>
+            </DockPanel>
         </TabItem>
         <TabItem Header="Create Employee">
             <Grid>
