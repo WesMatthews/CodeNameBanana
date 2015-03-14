@@ -28,11 +28,11 @@ namespace PPSoft_SkedgeITModels
                 emp.access_levelID = Convert.ToInt32(dictionaryEmployee["access_levelID"]);
                 emp.sunStart = Convert.ToDateTime(dictionaryEmployee["sunStart"]);
                 emp.sunEnd = Convert.ToDateTime(dictionaryEmployee["sunEnd"]);
-                emp.sunStart = Convert.ToDateTime(dictionaryEmployee["monStart"]);
+                emp.monStart = Convert.ToDateTime(dictionaryEmployee["monStart"]);
                 emp.monEnd = Convert.ToDateTime(dictionaryEmployee["monEnd"]);
-                emp.monStart = Convert.ToDateTime(dictionaryEmployee["tueStart"]);
+                emp.tueStart = Convert.ToDateTime(dictionaryEmployee["tueStart"]);
                 emp.tueEnd = Convert.ToDateTime(dictionaryEmployee["tueEnd"]);
-                emp.tueStart = Convert.ToDateTime(dictionaryEmployee["wedStart"]);
+                emp.wedStart = Convert.ToDateTime(dictionaryEmployee["wedStart"]);
                 emp.wedEnd = Convert.ToDateTime(dictionaryEmployee["wedEnd"]);
                 emp.thuStart = Convert.ToDateTime(dictionaryEmployee["thuStart"]);
                 emp.thuEnd = Convert.ToDateTime(dictionaryEmployee["thuEnd"]);

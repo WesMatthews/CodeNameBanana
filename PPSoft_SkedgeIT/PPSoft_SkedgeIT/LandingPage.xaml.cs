@@ -168,34 +168,34 @@ namespace PPSoft_SkedgeIT
             emp.lastName = tbLastName.Text;
             emp.password = tbPassword.Text;
             emp.accessLevel = tbAccessLevel.Text;
-            emp.SunStart = new DateTime(1, 1, 1, Convert.ToInt32(cbSundayStartHr),
-                Convert.ToInt32(cbSundayStartMin), 0);
+            emp.SunStart = new DateTime(1, 1, 1, Convert.ToInt32(cbSundayStartHr.SelectedValue),
+                Convert.ToInt32(cbSundayStartMin.SelectedValue), 1);
             emp.SunEnd = new DateTime(1,1,1, Convert.ToInt32(cbSundayEndHr.SelectedValue),
-                Convert.ToInt32(cbSundayEndMin.SelectedValue), 0);
+                Convert.ToInt32(cbSundayEndMin.SelectedValue), 1);
             emp.MonStart = new DateTime(1,1,1, Convert.ToInt32(cbMondayStartHr.SelectedValue),
-                Convert.ToInt32(cbMondayStartMin.SelectedValue), 0);
+                Convert.ToInt32(cbMondayStartMin.SelectedValue), 1);
             emp.MonEnd = new DateTime(1, 1, 1, Convert.ToInt32(cbMondayEndHr.SelectedValue),
-                Convert.ToInt32(cbMondayEndMin.SelectedValue), 0);
+                Convert.ToInt32(cbMondayEndMin.SelectedValue), 1);
             emp.TueStart = new DateTime(1, 1, 1, Convert.ToInt32(cbTuesStartHr.SelectedValue),
-                Convert.ToInt32(cbTuesStartMin.SelectedValue), 0);
+                Convert.ToInt32(cbTuesStartMin.SelectedValue), 1);
             emp.TueEnd = new DateTime(1, 1, 1, Convert.ToInt32(cbTuesEndHr.SelectedValue),
-                Convert.ToInt32(cbTuesEndMin.SelectedValue), 0);
+                Convert.ToInt32(cbTuesEndMin.SelectedValue), 1);
             emp.WedStart = new DateTime(1, 1, 1, Convert.ToInt32(cbWedStartHr.SelectedValue),
-                Convert.ToInt32(cbWedStartMin.SelectedValue), 0);
+                Convert.ToInt32(cbWedStartMin.SelectedValue), 1);
             emp.WedEnd = new DateTime(1, 1, 1, Convert.ToInt32(cbWedEndHr.SelectedValue),
-                Convert.ToInt32(cbWedEndMin.SelectedValue), 0);
+                Convert.ToInt32(cbWedEndMin.SelectedValue), 1);
             emp.ThuStart = new DateTime(1, 1, 1, Convert.ToInt32(cbThursStartHr.SelectedValue),
-                Convert.ToInt32(cbThursStartMin.SelectedValue), 0);
+                Convert.ToInt32(cbThursStartMin.SelectedValue), 1);
             emp.ThuEnd = new DateTime(1, 1, 1, Convert.ToInt32(cbThursEndHr.SelectedValue),
-                Convert.ToInt32(cbThursEndMin.SelectedValue), 0);
+                Convert.ToInt32(cbThursEndMin.SelectedValue), 1);
             emp.FriStart = new DateTime(1, 1, 1, Convert.ToInt32(cbFriStartHr.SelectedValue),
-                Convert.ToInt32(cbFriStartMin.SelectedValue), 0);
+                Convert.ToInt32(cbFriStartMin.SelectedValue), 1);
             emp.FriEnd = new DateTime(1, 1, 1, Convert.ToInt32(cbFriEndHr.SelectedValue),
-                Convert.ToInt32(cbFriEndMin.SelectedValue), 0);
+                Convert.ToInt32(cbFriEndMin.SelectedValue), 1);
             emp.SatStart = new DateTime(1, 1, 1, Convert.ToInt32(cbSatStartHr.SelectedValue),
-                Convert.ToInt32(cbSatStartMin.SelectedValue), 0);
+                Convert.ToInt32(cbSatStartMin.SelectedValue), 1);
             emp.SatEnd = new DateTime(1, 1, 1, Convert.ToInt32(cbSatEndHr.SelectedValue),
-                Convert.ToInt32(cbSatEndMin.SelectedValue), 0);
+                Convert.ToInt32(cbSatEndMin.SelectedValue), 1);
             emp.Register();
             MessageBox.Show(emp.Message);
         }
