@@ -66,6 +66,27 @@ namespace PPSoft_SkedgeITViewModels
             }
             return retShifts;
         }
+
+        public int Delete(int id)
+        {
+            int rowsDeleted = -1;
+
+            try
+            {
+                ppsoftEntities dbContext = new ppsoftEntities();
+                shift cEntity = dbContext.shifts.FirstOrDefault(shift => shift.employeeID == id);
+                int rowsBeforeDeleted = dbContext.shifts.Count();
+                dbContext.shifts.Remove(cEntity);
+                dbContext.SaveChanges();
+                int rowsAfterDeleted = dbContext.shifts.Count();
+                rowsDeleted = rowsBeforeDeleted - rowsAfterDeleted;
+            }
+            catch (Exception ex)
+            {
+                ErrorRoutine(ex, "ShiftViewModel", "Delete");
+            }
+            return rowsDeleted;
+        }
     }
 
 }

@@ -32,7 +32,7 @@
                  VerticalAlignment="Bottom"
                  HorizontalAlignment="Center"
                  Width="150"
-                 Margin="0,0,0,20"
+                 Margin="0,0,0,20" KeyDown="textLogin_KeyDown"
                  />
 
         <Label Content="Password"
@@ -47,7 +47,7 @@
                  VerticalAlignment="Top"
                  HorizontalAlignment="Center"
                  Width="150"
-                 Margin="0,20,0,0"
+                 Margin="0,20,0,0" KeyDown="textPassword_KeyDown"
                  />
         
         <Button Name="buttonLogin"

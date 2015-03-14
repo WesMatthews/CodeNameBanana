@@ -28,7 +28,7 @@ namespace PPSoft_SkedgeIT
 
         EmployeeViewModel employeeObject = new EmployeeViewModel();
 
-        private void buttonLogin_Click(object sender, RoutedEventArgs e)
+        private void Login()
         {
             EmployeeViewModel currEmp = employeeObject.getEmployeeProfile(Convert.ToInt32(textLogin.Text));
             if (currEmp == null)
@@ -45,5 +45,27 @@ namespace PPSoft_SkedgeIT
                 this.Close();
             }
         }
+
+        private void buttonLogin_Click(object sender, RoutedEventArgs e)
+        {
+            Login();
+        }
+
+        private void textLogin_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Return)
+            {
+                Login();
+            }
+        }
+
+        private void textPassword_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Return)
+            {
+                Login();
+            }
+        }
+
     }
 }

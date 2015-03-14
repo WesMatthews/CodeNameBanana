@@ -86,5 +86,15 @@ namespace PPSoft_SkedgeIT
             shiftGrid.ItemsSource = shifts;
         }
 
+        private void removeShift_Click(object sender, RoutedEventArgs e)
+        {
+            if (shiftGrid.SelectedItem != null)
+            {
+                ShiftViewModel temp = (ShiftViewModel)shiftGrid.SelectedItem;
+                shiftObject.Delete(temp.employeeID);
+                shiftGrid.Items.Refresh();
+            }
+        }
+
     }
 }

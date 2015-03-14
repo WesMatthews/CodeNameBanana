@@ -61,6 +61,12 @@
                     Grid.Row="1"
                   Grid.Column="1"
                   Grid.ColumnSpan="3"/>
+                
+                <Button Name="removeShift"
+                        Content="Remove Selected"
+                        Grid.Row="1"
+                        Margin="10"
+                        VerticalAlignment="Bottom" Click="removeShift_Click"/>
             </Grid>
         </TabItem>
         <TabItem Header="Management Tools">
