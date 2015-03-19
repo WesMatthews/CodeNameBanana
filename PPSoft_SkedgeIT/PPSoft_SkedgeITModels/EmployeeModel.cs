@@ -68,12 +68,22 @@ namespace PPSoft_SkedgeITModels
                 Dictionary<string, Object> dictionaryEmployee = (Dictionary<string, Object>)Deserializer(bytEmployee);
                 dbContext = new ppsoftEntities();
                 emp = dbContext.employees.Where(e => e.employeeID == empId).FirstOrDefault();
-                dbContext.employees.Attach(emp);
 
                 emp.password = Convert.ToString(dictionaryEmployee["password"]);
                 emp.firstName = Convert.ToString(dictionaryEmployee["firstName"]);
                 emp.lastName = Convert.ToString(dictionaryEmployee["lastName"]);
-                emp.access_levelID = Convert.ToInt32(dictionaryEmployee["access_levelID"]);
+                switch (dictionaryEmployee["access_levelID"].ToString())
+                {
+                    case "full":
+                        emp.access_levelID = 1;
+                        break;
+                    case "manager":
+                        emp.access_levelID = 2;
+                        break;
+                    case "employee":
+                        emp.access_levelID = 3;
+                        break;
+                }
                 emp.sunStart = Convert.ToDateTime(dictionaryEmployee["sunStart"]);
                 emp.sunEnd = Convert.ToDateTime(dictionaryEmployee["sunEnd"]);
                 emp.monStart = Convert.ToDateTime(dictionaryEmployee["monStart"]);
@@ -93,7 +103,7 @@ namespace PPSoft_SkedgeITModels
             }
             catch (Exception ex)
             {
-
+                ErrorRoutine(ex, "EmployeeViewModel", "UpdateEmployee");
             }
         }
 

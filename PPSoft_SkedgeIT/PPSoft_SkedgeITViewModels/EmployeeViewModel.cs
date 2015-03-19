@@ -136,7 +136,7 @@ namespace PPSoft_SkedgeITViewModels
                 dictionaryEmployee["satStart"] = SatStart;
                 dictionaryEmployee["satEnd"] = SatEnd;
                 empModel.UpdateEmployee(Serializer(dictionaryEmployee),empId);
-                Message = "Employee" + empId + " Updated Successfully";
+                Message = "Employee " + empId + " Updated Successfully";
             }
             catch (Exception ex)
             {
