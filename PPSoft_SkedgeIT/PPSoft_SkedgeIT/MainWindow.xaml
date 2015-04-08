@@ -1,7 +1,7 @@
 ﻿<Window x:Class="PPSoft_SkedgeIT.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MainWindow" Height="500" Width="700">
+        Title="MainWindow" Height="500" Width="700" Background="Gray">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="0.4*"/>
