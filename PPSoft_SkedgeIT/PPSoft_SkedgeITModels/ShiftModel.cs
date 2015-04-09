@@ -29,6 +29,7 @@ namespace PPSoft_SkedgeITModels
                              where ((s.startTime.Year == searchDate.Year) &&
                                     (s.startTime.Month == searchDate.Month) &&
                                     (s.startTime.Day == searchDate.Day))
+                             orderby s.startTime      
                              select new ShiftModel
                              {
                                  shiftID = s.shiftID,
@@ -58,6 +59,7 @@ namespace PPSoft_SkedgeITModels
                 var Shifts = from s in dbContext.shifts
                              join d in dbContext.departments on s.departmentID equals d.departmentID
                              where (s.employeeID == empID)
+                             orderby s.startTime
                              select new ShiftModel
                              {
                                  shiftID = s.shiftID,
