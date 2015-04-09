@@ -53,6 +53,24 @@ namespace PPSoft_SkedgeITModels
             return empId;  
         }
 
+        public void UpdateEmployeePermissions(int perm, int empId)
+        {
+            employee emp;
+            ppsoftEntities dbContext;
+            try
+            {
+                dbContext = new ppsoftEntities();
+                emp = dbContext.employees.Where(e => e.employeeID == empId).FirstOrDefault();
+                emp.access_levelID= perm;
+                dbContext.SaveChanges();
+
+            }
+            catch (Exception ex)
+            {
+                ErrorRoutine(ex, "EmployeeViewModel", "UpdateEmployee");
+            }
+        }
+
 
         //method name: UpdateEmployee
         //accepts: byte array of Employee information
