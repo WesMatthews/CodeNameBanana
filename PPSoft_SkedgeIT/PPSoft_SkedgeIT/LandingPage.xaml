@@ -507,7 +507,7 @@
                     <RowDefinition />
                     <RowDefinition />
                 </Grid.RowDefinitions>
-                <Button Content="Add Permission Level" Margin="10" HorizontalAlignment="Right" Padding="10"/>
+                <Button Name="btnAddPermissions" Content="Add Permission Level" Margin="10" HorizontalAlignment="Right" Padding="10" Click="btnAddPermissions_Click"/>
                 <Label Content="Permission Name" Grid.Row="0" Grid.Column="1" HorizontalAlignment="left" VerticalAlignment="Center"/>
                 <TextBox Name="txtNewPermission" Grid.Column="1" Margin="10" Width="200" HorizontalAlignment="Right"/>
             </Grid>

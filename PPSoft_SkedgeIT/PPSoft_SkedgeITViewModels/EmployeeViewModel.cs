@@ -110,6 +110,11 @@ namespace PPSoft_SkedgeITViewModels
             return retEmp;
         }
 
+        public void AddPermissionLevel(string name){
+            EmployeeModel emp = new EmployeeModel();
+            emp.addPermissionLevel(name);
+        }
+
         public void UpdateEmployee(int empId)
         {
             Dictionary<string, Object> dictionaryEmployee;

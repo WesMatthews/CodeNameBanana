@@ -354,5 +354,11 @@ namespace PPSoft_SkedgeIT
             AddShift win3 = new AddShift();
             win3.Show();
         }
+
+        private void btnAddPermissions_Click(object sender, RoutedEventArgs e)
+        {
+            EmployeeViewModel emp = new EmployeeViewModel();
+            emp.AddPermissionLevel(txtNewPermission.Text);
+        }
     }
 }
