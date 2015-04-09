@@ -1,0 +1,41 @@
+﻿<Window x:Class="PPSoft_SkedgeIT.AddShift"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="AddShift" Height="400" Width="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+
+            <RowDefinition Height="*"/>
+
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Label Grid.Row="0" Content="Start Date And Time" VerticalAlignment="Bottom"/>
+        <StackPanel Orientation="Horizontal" Grid.Row="1">
+            <DatePicker Name="dpStartDate" VerticalAlignment="Center"/>
+            <Label Content="Hour" VerticalAlignment="Center"/>
+            <ComboBox Name="cbStartHr" Margin="5,20" VerticalAlignment="Center"/>
+            <Label Content="Minute" VerticalAlignment="Center"/>
+            <ComboBox Name="cbStartMin" Margin="5,20" VerticalAlignment="Center"/>
+        </StackPanel>
+        <Label Grid.Row="2" Content="End Date and Time" VerticalAlignment="Bottom"/>
+        <StackPanel Orientation="Horizontal" Grid.Row="3">
+            <DatePicker Name="dpEndDate" VerticalAlignment="Center"/>
+            <Label Content="Hour" VerticalAlignment="Center"/>
+            <ComboBox Name="cbEndHr" Margin="5,20" VerticalAlignment="Center"/>
+            <Label Content="Minute" VerticalAlignment="Center"/>
+            <ComboBox Name="cbEndMin" Margin="5,20" VerticalAlignment="Center"/>
+        </StackPanel>
+        <StackPanel Grid.Row="4" Orientation="Horizontal">
+            <Button  Name="btnBack" Content="Close"   Margin="10,20" Click="btnBack_Click" />
+            <Label Content="Employee ID: " VerticalAlignment="Center"/>
+            <TextBox Name="tbEmpID" VerticalAlignment="Center" Width="50"/>
+            <Button Name="btnAddShift" Content="Add Shift"   Margin="10,20" Click="btnAddShift_Click" />
+            
+            
+        </StackPanel>
+        
+    </Grid>
+</Window>

@@ -78,6 +78,28 @@ namespace PPSoft_SkedgeITModels
             }
             return retShifts;
         }
+        public int addShift(byte[] bytShift)
+        {
+            int shiftID = -1;
+            shift sft = new shift();
+            ppsoftEntities dbContext = new ppsoftEntities();
+            try
+            {
+                Dictionary<string, Object> dictionaryShift = (Dictionary<string, Object>)Deserializer(bytShift);
+                sft.startTime = Convert.ToDateTime(dictionaryShift["start"]);
+                sft.endTime = Convert.ToDateTime(dictionaryShift["end"]);
+                sft.employeeID = Convert.ToInt32(dictionaryShift["empID"]);
+                sft.departmentID = 1;
+                dbContext.shifts.Add(sft);
+                dbContext.SaveChanges();
+                shiftID = sft.shiftID;
+            }
+            catch (Exception ex)
+            {
+                ErrorRoutine(ex, "ShiftModel", "AddShift");
+            }
+            return shiftID;
+        }
     }
 
 }

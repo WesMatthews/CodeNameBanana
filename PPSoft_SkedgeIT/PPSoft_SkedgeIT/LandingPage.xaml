@@ -94,8 +94,12 @@
                     Grid.Row="1"
                   Grid.Column="1"
                   Grid.ColumnSpan="3"/>
-                
-                <Button Name="removeShift"
+                    <Button Name="btnAddShift"
+                        Content="Add Shift"
+                        Grid.Row="1"
+                        Margin="10,10,10,10"
+                        VerticalAlignment="Top" Click="btnAddShift_Click"/>
+                    <Button Name="removeShift"
                         Content="Remove Selected"
                         Grid.Row="1"
                         Margin="10"

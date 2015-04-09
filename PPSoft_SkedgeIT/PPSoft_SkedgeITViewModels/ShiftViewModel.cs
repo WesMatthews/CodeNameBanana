@@ -87,6 +87,18 @@ namespace PPSoft_SkedgeITViewModels
             }
             return rowsDeleted;
         }
+        public void AddShift()
+        {
+            Dictionary<string, Object> dictionaryShift;
+            {
+                dictionaryShift = new Dictionary<string, Object>();
+                ShiftModel sftModel = new ShiftModel();
+                dictionaryShift["start"] = start;
+                dictionaryShift["end"] = end;
+                dictionaryShift["empID"] = employeeID;
+                sftModel.addShift(Serializer(dictionaryShift));
+            }
+        }
     }
 
 }

@@ -11,7 +11,6 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using System.Windows.Documents;
 using System.Printing;
 using PPSoft_SkedgeITViewModels;
 
@@ -348,6 +347,12 @@ namespace PPSoft_SkedgeIT
             PrintDialog prtDiag = new PrintDialog();
             prtDiag.ShowDialog();
 
+        }
+
+        private void btnAddShift_Click(object sender, RoutedEventArgs e)
+        {
+            AddShift win3 = new AddShift();
+            win3.Show();
         }
     }
 }
