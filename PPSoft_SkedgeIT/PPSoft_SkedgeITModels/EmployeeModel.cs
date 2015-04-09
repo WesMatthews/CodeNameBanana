@@ -70,7 +70,29 @@ namespace PPSoft_SkedgeITModels
                 ErrorRoutine(ex, "EmployeeViewModel", "UpdateEmployee");
             }
         }
+        
 
+        public int addPermissionLevel(string name)
+        {
+            ppsoftEntities dbContext;
+            int retPerm = -1;
+            try
+            {
+                dbContext = new ppsoftEntities();
+                access_level al = new access_level();
+                al.access = name;
+                dbContext.access_level.Add(al);
+                dbContext.SaveChanges();
+
+                retPerm = al.access_levelID;
+            }
+            catch (Exception ex)
+            {
+                ErrorRoutine(ex, "EmployeeViewModel", "addPermission");
+            }
+            return retPerm;
+
+        }
 
         //method name: UpdateEmployee
         //accepts: byte array of Employee information
