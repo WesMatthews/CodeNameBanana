@@ -104,7 +104,7 @@ namespace PPSoft_SkedgeITViewModels
                                    SatStart = (DateTime)e.satStart,
                                    SatEnd = (DateTime)e.satEnd
                                };
-            if (Profile == null)
+            if (Profile.Count() != 1)
                 return null;
             retEmp = Profile.ToList<EmployeeViewModel>()[0];
             return retEmp;

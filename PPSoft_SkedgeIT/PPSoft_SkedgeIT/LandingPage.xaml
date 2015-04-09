@@ -487,5 +487,30 @@
                 <Button Content="Update Employee" Grid.Row="11" Grid.Column="1" Click="UpdateEmployee_Click" Margin="10"/>
             </Grid>
         </TabItem>
+        <TabItem Header="Permissions">
+            <Grid Background="Gray">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Button Content="Add Permission Level" Margin="10" HorizontalAlignment="Right" Padding="10"/>
+                <Label Content="Permission Name" Grid.Row="0" Grid.Column="1" HorizontalAlignment="left" VerticalAlignment="Center"/>
+                <TextBox Name="txtNewPermission" Grid.Column="1" Margin="10" Width="200" HorizontalAlignment="Right"/>
+            </Grid>
+        </TabItem>
     </TabControl>
 </Window>
