@@ -99,6 +99,13 @@ namespace PPSoft_SkedgeITViewModels
                 sftModel.addShift(Serializer(dictionaryShift));
             }
         }
+
+        public override string ToString()
+        {
+            string retString = "";
+            retString += "ID: " + shiftID + " Start Time: " + start + " End Time: " + end + " Dept: " + Department;
+            return retString;
+        }
     }
 
 }
