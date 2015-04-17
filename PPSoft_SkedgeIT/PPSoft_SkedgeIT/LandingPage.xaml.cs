@@ -12,7 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Printing;
+using System.IO;
 using PPSoft_SkedgeITViewModels;
+using System.Windows.Markup;
 
 namespace PPSoft_SkedgeIT
 {
@@ -100,7 +102,9 @@ namespace PPSoft_SkedgeIT
             cbEmpAvailSatEndMin.SelectedIndex = 0;
 
 
-            cbSundayStartHr.ItemsSource = hours;
+
+#region ugly ass shit
+             cbSundayStartHr.ItemsSource = hours;
             cbSundayStartHr.SelectedIndex = 0;
             cbSundayStartMin.ItemsSource = minutes;
             cbSundayStartMin.SelectedIndex = 0;
@@ -164,9 +168,9 @@ namespace PPSoft_SkedgeIT
             cbSatEndMin.SelectedIndex = 0;
 
 
-
+#endregion
             //
-            
+            #region other ugly ass shit
             cmbUpdateSunStartHr.ItemsSource = hours;
             cmbUpdateSunStartMin.ItemsSource = minutes;
             cmbUpdateSunEndHr.ItemsSource = hours;
@@ -201,6 +205,7 @@ namespace PPSoft_SkedgeIT
             cmbUpdateSatStartMin.ItemsSource = minutes;
             cmbUpdateSatEndHr.ItemsSource = hours;
             cmbUpdateSatEndMin.ItemsSource = minutes;
+            #endregion
         }
 
         public static bool hasNumber = false;
@@ -408,9 +413,36 @@ namespace PPSoft_SkedgeIT
 
         private void MenuItem_Click(object sender, RoutedEventArgs e)
         {
+            
+            StreamWriter file = new StreamWriter("temp.txt");
+            file.WriteLine(shifts);
+            file.Close();
             PrintDialog prtDiag = new PrintDialog();
-            prtDiag.ShowDialog();
+            if (prtDiag.ShowDialog() != true) return;
 
+            // create a document
+            FixedDocument document = new FixedDocument();
+            document.DocumentPaginator.PageSize = new Size(prtDiag.PrintableAreaWidth, prtDiag.PrintableAreaHeight);
+            // create a page
+            FixedPage page1 = new FixedPage();
+            page1.Width = document.DocumentPaginator.PageSize.Width;
+            page1.Height = document.DocumentPaginator.PageSize.Height;
+            // add some text to the page
+            TextBlock page1Text = new TextBlock();
+            foreach(ShiftViewModel s in shifts)
+            {
+                page1Text.Text += s.ToString() + "\n";
+            }
+            //page1Text.Text = shiftGrid.Items.ToString();
+            page1Text.FontSize = 15; // 30pt text
+            page1Text.Margin = new Thickness(96); // 1 inch margin
+            page1.Children.Add(page1Text);
+            // add the page to the document
+            PageContent page1Content = new PageContent();
+            ((IAddChild)page1Content).AddChild(page1);
+            document.Pages.Add(page1Content);
+            // and print
+            prtDiag.PrintDocument(document.DocumentPaginator, "My first document");
         }
 
         private void btnAddShift_Click(object sender, RoutedEventArgs e)
