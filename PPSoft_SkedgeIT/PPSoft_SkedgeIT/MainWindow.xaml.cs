@@ -39,7 +39,10 @@ namespace PPSoft_SkedgeIT
             }
             else if(currEmp.accessLevel == "employee")
             {
-                errorText.Text = "Insufficient access rights, unable to log in.";
+                EmployeeLandingPage win2 = new EmployeeLandingPage(currEmp);
+                win2.Title += currEmp.firstName + " " + currEmp.lastName;
+                win2.Show();
+                this.Close();
             }
             else
             {
