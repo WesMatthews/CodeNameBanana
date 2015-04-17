@@ -30,5 +30,181 @@
                 </Grid>
             </DockPanel>
         </TabItem>
+        <TabItem Header="Availability Change" Loaded="TabItem_Loaded" >
+            <Grid Background="Gray">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width ="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Label Content="" />
+                <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Right">
+                    <Label Content="Sunday Start" Margin="2"/>
+                    <StackPanel Margin="2">
+                        <Label Content="Hour"/>
+                        <ComboBox Name="cbEmpAvailSundayStartHr"/>
+                    </StackPanel>
+                    <StackPanel Margin="2">
+                        <Label Content="Minute"/>
+                        <ComboBox Name="cbEmpAvailSundayStartMin"/>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
+                    <Label Content="Sunday End" Margin="2"/>
+                    <StackPanel Margin="2">
+                        <Label Content="Hour"/>
+                        <ComboBox Name="cbEmpAvailSundayEndHr" />
+                    </StackPanel>
+                    <StackPanel Margin="2">
+                        <Label Content="Minute"/>
+                        <ComboBox Name="cbEmpAvailSundayEndMin"/>
+                    </StackPanel>
+                </StackPanel>
+
+                <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right">
+                    <Label Content="Monday Start" Margin="2"/>
+                    <StackPanel Margin="2">
+                        <Label Content="Hour"/>
+                        <ComboBox Name="cbEmpAvailMondayStartHr"/>
+                    </StackPanel>
+                    <StackPanel Margin="2">
+                        <Label Content="Minute"/>
+                        <ComboBox Name="cbEmpAvailMondayStartMin"/>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
+                    <Label Content="Monday End" Margin="2"/>
+                    <StackPanel Margin="2">
+                        <Label Content="Hour"/>
+                        <ComboBox Name="cbEmpAvailMondayEndHr" />
+                    </StackPanel>
+                    <StackPanel Margin="2">
+                        <Label Content="Minute"/>
+                        <ComboBox Name="cbEmpAvailMondayEndMin"/>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right">
+                    <Label Content="Tuesday Start" Margin="2"/>
+                    <StackPanel Margin="2">
+                        <Label Content="Hour"/>
+                        <ComboBox Name="cbEmpAvailTuesStartHr"/>
+                    </StackPanel>
+                    <StackPanel Margin="2">
+                        <Label Content="Minute"/>
+                        <ComboBox Name="cbEmpAvailTuesStartMin"/>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
+                    <Label Content="Tuesday End" Margin="2"/>
+                    <StackPanel Margin="2">
+                        <Label Content="Hour"/>
+                        <ComboBox Name="cbEmpAvailTuesEndHr" />
+                    </StackPanel>
+                    <StackPanel Margin="2">
+                        <Label Content="Minute"/>
+                        <ComboBox Name="cbEmpAvailTuesEndMin"/>
+                    </StackPanel>
+                </StackPanel>
+
+                <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Right">
+                    <Label Content="Wednesday Start" Margin="2"/>
+                    <StackPanel Margin="2">
+                        <Label Content="Hour"/>
+                        <ComboBox Name="cbEmpAvailWedStartHr"/>
+                    </StackPanel>
+                    <StackPanel Margin="2">
+                        <Label Content="Minute"/>
+                        <ComboBox Name="cbEmpAvailWedStartMin"/>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Grid.Row="3" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
+                    <Label Content="Wednesday End" Margin="2"/>
+                    <StackPanel Margin="2">
+                        <Label Content="Hour"/>
+                        <ComboBox Name="cbEmpAvailWedEndHr" />
+                    </StackPanel>
+                    <StackPanel Margin="2">
+                        <Label Content="Minute"/>
+                        <ComboBox Name="cbEmpAvailWedEndMin"/>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Right">
+                    <Label Content="Thursday Start" Margin="2"/>
+                    <StackPanel Margin="2">
+                        <Label Content="Hour"/>
+                        <ComboBox Name="cbEmpAvailThursStartHr"/>
+                    </StackPanel>
+                    <StackPanel Margin="2">
+                        <Label Content="Minute"/>
+                        <ComboBox Name="cbEmpAvailThursStartMin"/>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Grid.Row="4" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
+                    <Label Content="Thursday End" Margin="2"/>
+                    <StackPanel Margin="2">
+                        <Label Content="Hour"/>
+                        <ComboBox Name="cbEmpAvailThursEndHr" />
+                    </StackPanel>
+                    <StackPanel Margin="2">
+                        <Label Content="Minute"/>
+                        <ComboBox Name="cbEmpAvailThursEndMin"/>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Grid.Row="5" Orientation="Horizontal" HorizontalAlignment="Right">
+                    <Label Content="Friday Start" Margin="2"/>
+                    <StackPanel Margin="2">
+                        <Label Content="Hour"/>
+                        <ComboBox Name="cbEmpAvailFriStartHr"/>
+                    </StackPanel>
+                    <StackPanel Margin="2">
+                        <Label Content="Minute"/>
+                        <ComboBox Name="cbEmpAvailFriStartMin"/>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Grid.Row="5" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
+                    <Label Content="Friday End" Margin="2"/>
+                    <StackPanel Margin="2">
+                        <Label Content="Hour"/>
+                        <ComboBox Name="cbEmpAvailFriEndHr" />
+                    </StackPanel>
+                    <StackPanel Margin="2">
+                        <Label Content="Minute"/>
+                        <ComboBox Name="cbEmpAvailFriEndMin"/>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Grid.Row="6" Orientation="Horizontal" HorizontalAlignment="Right">
+                    <Label Content="Saturday Start" Margin="2"/>
+                    <StackPanel Margin="2">
+                        <Label Content="Hour"/>
+                        <ComboBox Name="cbEmpAvailSatStartHr"/>
+                    </StackPanel>
+                    <StackPanel Margin="2">
+                        <Label Content="Minute"/>
+                        <ComboBox Name="cbEmpAvailSatStartMin"/>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Grid.Row="6" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
+                    <Label Content="Saturday End" Margin="2"/>
+                    <StackPanel Margin="2">
+                        <Label Content="Hour"/>
+                        <ComboBox Name="cbEmpAvailSatEndHr" />
+                    </StackPanel>
+                    <StackPanel Margin="2">
+                        <Label Content="Minute"/>
+                        <ComboBox Name="cbEmpAvailSatEndMin"/>
+                    </StackPanel>
+                </StackPanel>
+                <Button Content="Confirm Availability Update" Grid.Row="11" Grid.Column="1" Margin="10" Click="EmpAvailChange_Click"/>
+            </Grid>
+        </TabItem>
     </TabControl>
 </Window>

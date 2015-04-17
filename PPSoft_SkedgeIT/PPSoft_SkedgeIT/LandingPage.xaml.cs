@@ -38,73 +38,9 @@ namespace PPSoft_SkedgeIT
                 minutes.Add(i);
             }
 
-            cbEmpAvailSundayStartHr.ItemsSource = hours;
-            cbEmpAvailSundayStartHr.SelectedIndex = 0;
-            cbEmpAvailSundayStartMin.ItemsSource = minutes;
-            cbEmpAvailSundayStartMin.SelectedIndex = 0;
-            cbEmpAvailSundayEndHr.ItemsSource = hours;
-            cbEmpAvailSundayEndHr.SelectedIndex = 0;
-            cbEmpAvailSundayEndMin.ItemsSource = minutes;
-            cbEmpAvailSundayEndMin.SelectedIndex = 0;
-
-            cbEmpAvailMondayStartHr.ItemsSource = hours;
-            cbEmpAvailMondayStartHr.SelectedIndex = 0;
-            cbEmpAvailMondayStartMin.ItemsSource = minutes;
-            cbEmpAvailMondayStartMin.SelectedIndex = 0;
-            cbEmpAvailMondayEndHr.ItemsSource = hours;
-            cbEmpAvailMondayEndHr.SelectedIndex = 0;
-            cbEmpAvailMondayEndMin.ItemsSource = minutes;
-            cbEmpAvailMondayEndMin.SelectedIndex = 0;
-
-            cbEmpAvailTuesStartHr.ItemsSource = hours;
-            cbEmpAvailTuesStartHr.SelectedIndex = 0;
-            cbEmpAvailTuesStartMin.ItemsSource = minutes;
-            cbEmpAvailTuesStartMin.SelectedIndex = 0;
-            cbEmpAvailTuesEndHr.ItemsSource = hours;
-            cbEmpAvailTuesEndHr.SelectedIndex = 0;
-            cbEmpAvailTuesEndMin.ItemsSource = minutes;
-            cbEmpAvailTuesEndMin.SelectedIndex = 0;
-
-            cbEmpAvailWedStartHr.ItemsSource = hours;
-            cbEmpAvailWedStartHr.SelectedIndex = 0;
-            cbEmpAvailWedStartMin.ItemsSource = minutes;
-            cbEmpAvailWedStartMin.SelectedIndex = 0;
-            cbEmpAvailWedEndHr.ItemsSource = hours;
-            cbEmpAvailWedEndHr.SelectedIndex = 0;
-            cbEmpAvailWedEndMin.ItemsSource = minutes;
-            cbEmpAvailWedEndMin.SelectedIndex = 0;
-
-            cbEmpAvailThursStartHr.ItemsSource = hours;
-            cbEmpAvailThursStartHr.SelectedIndex = 0;
-            cbEmpAvailThursStartMin.ItemsSource = minutes;
-            cbEmpAvailThursStartMin.SelectedIndex = 0;
-            cbEmpAvailThursEndHr.ItemsSource = hours;
-            cbEmpAvailThursEndHr.SelectedIndex = 0;
-            cbEmpAvailThursEndMin.ItemsSource = minutes;
-            cbEmpAvailThursEndMin.SelectedIndex = 0;
-
-            cbEmpAvailFriStartHr.ItemsSource = hours;
-            cbEmpAvailFriStartHr.SelectedIndex = 0;
-            cbEmpAvailFriStartMin.ItemsSource = minutes;
-            cbEmpAvailFriStartMin.SelectedIndex = 0;
-            cbEmpAvailFriEndHr.ItemsSource = hours;
-            cbEmpAvailFriEndHr.SelectedIndex = 0;
-            cbEmpAvailFriEndMin.ItemsSource = minutes;
-            cbEmpAvailFriEndMin.SelectedIndex = 0;
-
-            cbEmpAvailSatStartHr.ItemsSource = hours;
-            cbEmpAvailSatStartHr.SelectedIndex = 0;
-            cbEmpAvailSatStartMin.ItemsSource = minutes;
-            cbEmpAvailSatStartMin.SelectedIndex = 0;
-            cbEmpAvailSatEndHr.ItemsSource = hours;
-            cbEmpAvailSatEndHr.SelectedIndex = 0;
-            cbEmpAvailSatEndMin.ItemsSource = minutes;
-            cbEmpAvailSatEndMin.SelectedIndex = 0;
-
-
-
 #region ugly ass shit
-             cbSundayStartHr.ItemsSource = hours;
+
+            cbSundayStartHr.ItemsSource = hours;
             cbSundayStartHr.SelectedIndex = 0;
             cbSundayStartMin.ItemsSource = minutes;
             cbSundayStartMin.SelectedIndex = 0;
@@ -459,48 +395,6 @@ namespace PPSoft_SkedgeIT
 
 
 
-        /***************************************    MOVE TO EMPLOYEE    *****************************************/
-        private void EmpAvailChange_Click(object sender, RoutedEventArgs e)
-        {
-            EmployeeViewModel getEmp = new EmployeeViewModel();
-            try
-            {
-                EmployeeViewModel emp = getEmp.getEmployeeProfile(Convert.ToInt32(txtEmpNum.Text)); // CHANGE THIS TO CURRENT EMPLOYEE LOGGED IN
-                emp.SunStart = new DateTime(1, 1, 1, Convert.ToInt32(cmbUpdateSunStartHr.SelectedValue),
-                Convert.ToInt32(cmbUpdateSunStartMin.SelectedValue), 0);
-                emp.SunEnd = new DateTime(1, 1, 1, Convert.ToInt32(cmbUpdateSunEndHr.SelectedValue),
-                    Convert.ToInt32(cmbUpdateSunEndMin.SelectedValue), 0);
-                emp.MonStart = new DateTime(1, 1, 1, Convert.ToInt32(cmbUpdateMonStartHr.SelectedValue),
-                    Convert.ToInt32(cmbUpdateMonStartMin.SelectedValue), 0);
-                emp.MonEnd = new DateTime(1, 1, 1, Convert.ToInt32(cmbUpdateMonEndHr.SelectedValue),
-                    Convert.ToInt32(cmbUpdateMonEndMin.SelectedValue), 0);
-                emp.TueStart = new DateTime(1, 1, 1, Convert.ToInt32(cmbUpdateTueStartHr.SelectedValue),
-                    Convert.ToInt32(cmbUpdateTueStartMin.SelectedValue), 0);
-                emp.TueEnd = new DateTime(1, 1, 1, Convert.ToInt32(cmbUpdateTueEndHr.SelectedValue),
-                    Convert.ToInt32(cmbUpdateTueEndMin.SelectedValue), 0);
-                emp.WedStart = new DateTime(1, 1, 1, Convert.ToInt32(cmbUpdateWedStartHr.SelectedValue),
-                    Convert.ToInt32(cmbUpdateWedStartMin.SelectedValue), 0);
-                emp.WedEnd = new DateTime(1, 1, 1, Convert.ToInt32(cmbUpdateWedEndHr.SelectedValue),
-                    Convert.ToInt32(cmbUpdateWedEndMin.SelectedValue), 0);
-                emp.ThuStart = new DateTime(1, 1, 1, Convert.ToInt32(cmbUpdateThuStartHr.SelectedValue),
-                    Convert.ToInt32(cmbUpdateThuStartMin.SelectedValue), 0);
-                emp.ThuEnd = new DateTime(1, 1, 1, Convert.ToInt32(cmbUpdateThuEndHr.SelectedValue),
-                    Convert.ToInt32(cmbUpdateThuEndMin.SelectedValue), 0);
-                emp.FriStart = new DateTime(1, 1, 1, Convert.ToInt32(cmbUpdateFriStartHr.SelectedValue),
-                    Convert.ToInt32(cmbUpdateFriStartMin.SelectedValue), 0);
-                emp.FriEnd = new DateTime(1, 1, 1, Convert.ToInt32(cmbUpdateFriEndHr.SelectedValue),
-                    Convert.ToInt32(cmbUpdateFriEndMin.SelectedValue), 0);
-                emp.SatStart = new DateTime(1, 1, 1, Convert.ToInt32(cmbUpdateSatStartHr.SelectedValue),
-                    Convert.ToInt32(cmbUpdateSatStartMin.SelectedValue), 0);
-                emp.SatEnd = new DateTime(1, 1, 1, Convert.ToInt32(cmbUpdateSatEndHr.SelectedValue),
-                    Convert.ToInt32(cmbUpdateSatEndMin.SelectedValue), 0);
-                emp.UpdateEmployee(Convert.ToInt32(txtEmpNum.Text));
-                MessageBox.Show(emp.Message);
-            }
-            catch (Exception ex) 
-            {
-                MessageBox.Show(ex.ToString());            
-            }
-        }
+        
     }
 }
