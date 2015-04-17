@@ -5,7 +5,7 @@
         WindowStartupLocation="CenterScreen">
     <TabControl>
         <TabItem Header="Scheduling Data">
-            <Grid>
+            <Grid Background="Gray">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="6*"/>
