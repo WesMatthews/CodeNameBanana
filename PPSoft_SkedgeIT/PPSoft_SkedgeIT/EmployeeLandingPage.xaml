@@ -5,23 +5,30 @@
         WindowStartupLocation="CenterScreen">
     <TabControl>
         <TabItem Header="Scheduling Data">
-            <Grid Background="Gray">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="6*"/>
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="2*"/>
-                    <ColumnDefinition Width="2*"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-                
-                <DataGrid Name="shiftGrid"
-                    Grid.Row="1"
-                  Grid.Column="1"
-                  Grid.ColumnSpan="2"/>
-            </Grid>
+            <DockPanel LastChildFill="True" Background="Gray">
+                <Menu IsMainMenu="True" DockPanel.Dock="Top">
+                    <MenuItem Header="File">
+                        <MenuItem Header="Print" Click="MenuItem_Click" />
+                    </MenuItem>
+                </Menu>
+                <Grid Background="Gray">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="6*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <DataGrid Name="shiftGrid"
+                        Grid.Row="1"
+                      Grid.Column="1"
+                      Grid.ColumnSpan="2"/>
+                </Grid>
+            </DockPanel>
         </TabItem>
     </TabControl>
 </Window>
